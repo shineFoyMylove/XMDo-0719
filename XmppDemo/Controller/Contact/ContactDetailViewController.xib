@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactDetailViewController">
+            <connections>
+                <outlet property="HeadImage" destination="j8d-gb-bHz" id="21N-2l-t2d"/>
+                <outlet property="NameLabe" destination="t4z-RH-chi" id="sMo-Lc-waf"/>
+                <outlet property="phonesTable" destination="Ahs-J9-7fF" id="F9v-4M-Cww"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kij-f7-Bv5">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j8d-gb-bHz">
+                            <rect key="frame" x="15" y="18" width="45" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="45" id="7k8-I4-EYL"/>
+                                <constraint firstAttribute="width" secondItem="j8d-gb-bHz" secondAttribute="height" multiplier="1:1" id="QJa-ZN-ayN"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="孟姜女" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4z-RH-chi">
+                            <rect key="frame" x="75" y="30" width="60" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="Lfh-U9-Ke1"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <color key="textColor" red="0.23403445512820498" green="0.23403445512820498" blue="0.23403445512820498" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="AyJ-mB-zgy"/>
+                        <constraint firstItem="t4z-RH-chi" firstAttribute="centerY" secondItem="kij-f7-Bv5" secondAttribute="centerY" id="EEu-zq-dOU"/>
+                        <constraint firstItem="t4z-RH-chi" firstAttribute="leading" secondItem="j8d-gb-bHz" secondAttribute="trailing" constant="15" id="IBR-uL-Gii"/>
+                        <constraint firstItem="j8d-gb-bHz" firstAttribute="leading" secondItem="kij-f7-Bv5" secondAttribute="leading" constant="15" id="dD4-vh-WRK"/>
+                        <constraint firstItem="j8d-gb-bHz" firstAttribute="centerY" secondItem="kij-f7-Bv5" secondAttribute="centerY" id="nZT-gu-wpA"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ahs-J9-7fF">
+                    <rect key="frame" x="0.0" y="90" width="320" height="478"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </tableView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="kij-f7-Bv5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="AdP-0Q-UvE"/>
+                <constraint firstAttribute="trailing" secondItem="kij-f7-Bv5" secondAttribute="trailing" id="U5g-Of-SoY"/>
+                <constraint firstItem="Ahs-J9-7fF" firstAttribute="top" secondItem="kij-f7-Bv5" secondAttribute="bottom" constant="10" id="bTK-jw-EWQ"/>
+                <constraint firstAttribute="trailing" secondItem="Ahs-J9-7fF" secondAttribute="trailing" id="ci0-HC-o8i"/>
+                <constraint firstItem="Ahs-J9-7fF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dOY-rj-Rgx"/>
+                <constraint firstItem="kij-f7-Bv5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="icT-03-sAy"/>
+                <constraint firstAttribute="bottom" secondItem="Ahs-J9-7fF" secondAttribute="bottom" id="noc-7q-jMH"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

@@ -132,6 +132,26 @@
  @return NSArray<ChatMessage *>
  */
 +(NSArray <ChatMessage *>*)fetchTheRecentChatMessageWithID:(NSString *)conversationID{
+    
+    NSFetchRequest *request = [ChatMessage fetchRequest];
+    
+    //排序
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timeInterval" ascending:YES];
+    [request setSortDescriptors:@[sortDescriptor]];
+    
+    //筛选
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"conversationId = %@",conversationID];
+    request.predicate = predicate;
+    
+    NSError *error = nil;
+    NSArray *fetchArr = [[CoreDataManager instance].managedObjectContext executeFetchRequest:request error:&error];
+    if (error) {
+        NSLog(@"数据库访问错误:%@",error.description);
+    }
+    if (fetchArr.count >0) {
+        return fetchArr;
+    }
+    
     return nil;
 }
 

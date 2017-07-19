@@ -114,7 +114,7 @@
         
         NSArray *friends = [NSArray arrayWithArray:TmpNewUsers];
         for (TLUser *user in friends) {
-            if ([user.userID isEqualToString:SJid]) {
+            if ([user.userID isEqualToString:jid.user]) {
                 isExist = YES;
             }
         }
@@ -134,7 +134,7 @@
         //已经申请通过
         NSArray *newFris = [NewFriendObject featchAllRequest];
         for (NewFriendObject *obj in newFris) {
-            if ([SJid isEqualToString:obj.phone]) {
+            if ([jid.user isEqualToString:obj.phone]) {
                 obj.state = TLNewFriendApplyStateAgreed;
                 
                 NotificationPost(NTIMHaveNewFriend, nil);
@@ -154,7 +154,11 @@
         _timer = nil;
     }
     
-    _timer = [NSTimer scheduledTimerWithTimeInterval:delayTime target:self selector:select userInfo:nil repeats:NO];
+    _timer = [NSTimer timerWithTimeInterval:delayTime target:self selector:select userInfo:nil repeats:NO];
+    [[NSRunLoop currentRunLoop] addTimer:_timer forMode:(NSDefaultRunLoopMode)];
+    
+//    _timer = [NSTimer scheduledTimerWithTimeInterval:delayTime target:self selector:select userInfo:nil repeats:NO];
+    
     
 }
 

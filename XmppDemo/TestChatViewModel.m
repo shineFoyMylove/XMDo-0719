@@ -36,7 +36,7 @@
     /** 添加测试语音消息2 */
     XMNChatVoiceMessage *voiceMessage2 = [[XMNChatVoiceMessage alloc] initWithContent:@"https://raw.githubusercontent.com/ws00801526/XMNAudio/master/XMNAudioExample/XMNAudioExample/letitgo_v.mp3" state:XMNMessageStateSuccess owner:XMNMessageOwnerSelf];
     voiceMessage2.state = XMNMessageStateSending;
-    [self.messages addObject:voiceMessage2];
+//    [self.messages addObject:voiceMessage2];
 }
 
 /**

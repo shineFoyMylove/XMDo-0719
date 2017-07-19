@@ -73,7 +73,7 @@
 
     // 普通pop，popRootViewController
 -(void)popViewControllerAnimated:(BOOL)animated{
-    [self.view endEditing:YES];
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -100,6 +100,7 @@
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+    [self.view endEditing:YES];
     
     if (self.navigationController.viewControllers.count == 1) {
         [self enableOpenLeftDrawer:YES];   //打开抽屉手势

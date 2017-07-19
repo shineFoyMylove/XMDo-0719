@@ -17,6 +17,9 @@
 
 @interface TSYChatViewController ()
 
+@property (nonatomic, retain) NSMutableArray *messageArray;     /**< XMNBaseMessage */
+
+@property (nonatomic, retain) NSMutableArray *messageObjArray;  /**< messageObject */
 
 @end
 
@@ -45,7 +48,61 @@
     
     [self setupChatOtherItemsDefault];
 
+    //数据源
+    self.messageArray = [NSMutableArray array];
+    self.messageObjArray = [NSMutableArray array];
+    [self reloadCurrentConversationMessages];  //加载当前会话记录
     
+    
+}
+
+-(void)reloadCurrentConversationMessages{
+    
+    [self.messageObjArray addObjectsFromArray:[ChatMessage fetchTheRecentChatMessageWithID:_userId]];
+    
+    for (ChatMessage *chatMsg in _messageObjArray) {
+        
+        XMNChatBaseMessage *baseMsg = nil;
+        switch (chatMsg.msgType) {
+            case IMMessgeTypeText:
+            {
+                XMNChatTextMessage *textMsg = [[XMNChatTextMessage alloc] initWithContent:chatMsg.textContent state:(XMNMessageStateSuccess) owner:chatMsg.isFromOwn?XMNMessageOwnerSelf:XMNMessageOwnerOther];
+                baseMsg = (XMNChatBaseMessage *)textMsg;
+                
+            }
+                break;
+            case IMMessgeTypeImage:
+            {
+                XMNChatImageMessage *imgMsg = [[XMNChatImageMessage alloc] initWithContent:chatMsg.img_url state:(XMNMessageStateSuccess) owner:chatMsg.isFromOwn?XMNMessageOwnerSelf:XMNMessageOwnerOther];
+                baseMsg = (XMNChatBaseMessage *)imgMsg;
+            }
+                break;
+            case IMMessgeTypeVideo:
+                break;
+            case IMMessgeTypeAudio:
+            {
+                XMNChatVoiceMessage *voiceMsg = [[XMNChatVoiceMessage alloc] initWithContent:chatMsg.voice_url state:(XMNMessageStateSuccess) owner:chatMsg.isFromOwn?XMNMessageOwnerSelf:XMNMessageOwnerOther];
+                baseMsg = (XMNChatBaseMessage *)voiceMsg;
+            }
+                break;
+            case IMMessgeTypeFile:
+                break;
+            case IMMessgeTypeLocation:
+                
+                break;
+            default:
+            {
+                baseMsg = [[XMNChatSystemMessage alloc] initWithContent:[[NSDate date] dateStringNormal] state:(XMNMessageStateSuccess) owner:(XMNMessageOwnerSystem)];
+            }
+                break;
+        }
+        
+        [self.messageArray addObject:baseMsg];
+    }
+    
+    [self.chatVM.messages addObjectsFromArray:_messageArray];
+    
+    [self tableViewReload];  //
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -320,10 +377,10 @@
         NSLog(@"消息记录 - 存储失败");
     }
     
-    NSArray *msgArr = [ChatMessage fetchAllChatMessage];
-    for (ChatMessage *msg in msgArr) {
-        NSLog(@"content: %@",msg.textContent);
-    }
+//    NSArray *msgArr = [ChatMessage fetchAllChatMessage];
+//    for (ChatMessage *msg in msgArr) {
+//        NSLog(@"content: %@",msg.textContent);
+//    }
     
 }
 
@@ -460,6 +517,13 @@
         }
         
         [self tableViewReload];
+        
+        //接收到的信息save
+        ChatMessage *chatMsg = [ChatMessage NewMessage];
+        [chatMsg updateWithMessageModel:msgObj];
+        if (![chatMsg insert]) {
+            NSLog(@"消息记录 - 存储失败");
+        }
     }
 }
 

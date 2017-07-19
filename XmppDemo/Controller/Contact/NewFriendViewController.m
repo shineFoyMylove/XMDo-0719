@@ -126,9 +126,12 @@
         //删除
         NewFriendObject *obj = self.NewFriendsArray[indexPath.row];
         NSString *phoneStr = [NSString stringWithString:obj.phone];
+        TLNewFriendApplyState statu = obj.state;
         if ([obj remove]) {
             //拒绝
-            [[XMPPTool shareXMPPTool] xmppDisagreeWithFriendRequest:phoneStr];
+//            if (statu != TLNewFriendApplyStateAgreed) {
+                [[XMPPTool shareXMPPTool] xmppDisagreeWithFriendRequest:phoneStr];
+//            }
             
             [self.NewFriendsArray removeObject:obj];
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:(UITableViewRowAnimationFade)];

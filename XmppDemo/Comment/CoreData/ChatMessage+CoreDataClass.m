@@ -56,7 +56,8 @@
         self.loc_lng      = model.lng.floatValue;
         self.loc_lat      = model.lat.floatValue;
         
-        self.timeInterval = model.time.doubleValue;
+//        self.timeInterval = model.time.doubleValue;
+        self.timeInterval = [NSDate timeInterval];
     }
     
 }

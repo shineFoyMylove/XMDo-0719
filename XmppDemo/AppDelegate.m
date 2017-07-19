@@ -11,6 +11,7 @@
 #import "TLFriendsViewController.h"
 #import "TLFriendHelper.h"
 #import "NewFriendObject+CoreDataClass.h"
+#import "ChatMessage+CoreDataClass.h"
 #import "CoreDataManager.h"
 
 @interface AppDelegate ()<XMPPRosterDelegate,XMPPStreamDelegate>
@@ -53,6 +54,8 @@
     [stream addDelegate:self delegateQueue:dispatch_get_main_queue()];
     [stream addDelegate:self delegateQueue:dispatch_get_main_queue()];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(xmppMessageReceive:) name:XMPPChatReceiveMessageNotification object:nil];
+    
     return YES;
 }
 
@@ -79,6 +82,22 @@
     //    BuglyConfig *bugConfig = [[BuglyConfig alloc] init];
     //    [bugConfig setChannel:[NSString stringWithFormat:@"%@-(精简版)",bundleName]];
     //    [Bugly startWithAppId:@"3e367b9b72"config:bugConfig];
+}
+
+#pragma mark 消息接收通知监听
+-(void)xmppMessageReceive:(NSNotification *)notify{
+    if ([notify.object isKindOfClass:[NSDictionary class]]){
+        //服务器回调
+        MessageModel *msgObj = [[MessageModel alloc] init];
+        msgObj = [MessageModel mj_objectWithKeyValues:notify.object];
+        
+        //接收到的信息save
+        ChatMessage *chatMsg = [ChatMessage NewMessage];
+        [chatMsg updateWithMessageModel:msgObj];
+        if (![chatMsg insert]) {
+            NSLog(@"消息记录 - 存储失败");
+        }
+    }
 }
 
 #pragma mark - XMPPRosterDelegate监听好友请求,收到好友请求时调用该代理方法
@@ -159,6 +178,7 @@
         [newObj insert];
     }
 }
+
 
 #pragma mark - UIApplication Delegate
 

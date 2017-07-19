@@ -31,8 +31,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSString *to_uid;
 @property (nullable, nonatomic, copy) NSString *to_headerImage;
 
-    /**< 文件类型 1是文字， 2图片， 3小视频  4语音  5文件， 6地址 必须*/
-@property (nonatomic) IMMessgeType msgType;
+
+@property (nonatomic) IMMessgeType msgType;  /**< 文件类型 1是文字， 2图片， 3小视频  4语音  5文件， 6地址 必须 */
     //Text
 @property (nullable, nonatomic, copy) NSString *textContent;
     //Image

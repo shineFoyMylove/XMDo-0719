@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ContactDetailCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18122554488" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfb-da-8Og">
+                        <rect key="frame" x="15" y="12" width="108" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="UrC-6f-Gfy"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.29595352564102551" green="0.29595352564102551" blue="0.29595352564102551" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="call_phone.png" translatesAutoresizingMaskIntoConstraints="NO" id="Jij-FX-j7y">
+                        <rect key="frame" x="286" y="9" width="26" height="26"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Jij-FX-j7y" secondAttribute="height" multiplier="1:1" id="XZP-gr-Fn5"/>
+                            <constraint firstAttribute="width" constant="26" id="xMh-g3-7lA"/>
+                        </constraints>
+                    </imageView>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="云南 大理" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ola-Hj-axE">
+                        <rect key="frame" x="15" y="28" width="56" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="Fty-nD-SWJ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.36324118589743593" green="0.36324118589743593" blue="0.36324118589743593" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="miY-gN-9fw" userLabel="BottumLine">
+                        <rect key="frame" x="10" y="42" width="268" height="1"/>
+                        <color key="backgroundColor" red="0.96125801282051282" green="0.96125801282051282" blue="0.96125801282051282" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="lEX-aK-tPE"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="ola-Hj-axE" secondAttribute="bottom" id="0OS-FG-C3D"/>
+                    <constraint firstItem="miY-gN-9fw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="6Nx-na-UXx"/>
+                    <constraint firstItem="ola-Hj-axE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="MRY-LR-CUx"/>
+                    <constraint firstItem="jfb-da-8Og" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="RFR-5B-SR5"/>
+                    <constraint firstItem="jfb-da-8Og" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="UBf-Q1-xVg"/>
+                    <constraint firstAttribute="bottom" secondItem="miY-gN-9fw" secondAttribute="bottom" id="Wms-wf-TCS"/>
+                    <constraint firstAttribute="trailing" secondItem="miY-gN-9fw" secondAttribute="trailing" constant="42" id="bIL-Em-GhS"/>
+                    <constraint firstItem="Jij-FX-j7y" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="dea-Om-1Mu"/>
+                    <constraint firstAttribute="trailing" secondItem="Jij-FX-j7y" secondAttribute="trailing" constant="8" id="uNI-Us-lwi"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="phoneAreaLab" destination="ola-Hj-axE" id="8e8-44-ELA"/>
+                <outlet property="phoneLab" destination="jfb-da-8Og" id="3lH-CW-ND9"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="call_phone.png" width="120" height="120"/>
+    </resources>
+</document>

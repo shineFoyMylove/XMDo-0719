@@ -12,6 +12,8 @@
 #import "TLFriendHelper.h"
 
 #import "NewFriendViewController.h"
+#import "ContactsViewController.h"
+
 //#import "TLGroupViewController.h"
 //#import "TLTagsViewController.h"
 //#import "TLPublicServerViewController.h"
@@ -39,9 +41,6 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     TLUserGroup *group = [self.data objectAtIndex:section];
-    if (section == 3) {
-        NSLog(@"group.count = %d",group.count);
-    }
     return group.count;
 }
 
@@ -124,11 +123,6 @@
             NewFriendViewController *newFriendVc = [[NewFriendViewController alloc] init];
             newFriendVc.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:newFriendVc animated:YES];
-            
-//            TLNewFriendViewController *newFriendVC = [[TLNewFriendViewController alloc] init];
-//            [self setHidesBottomBarWhenPushed:YES];
-//            [self.navigationController pushViewController:newFriendVC animated:YES];
-//            [self setHidesBottomBarWhenPushed:NO];
         }
         else if ([user.userID isEqualToString:@"-2"]) {
 //            TLGroupViewController *groupVC = [[TLGroupViewController alloc] init];
@@ -143,6 +137,11 @@
 //            [self setHidesBottomBarWhenPushed:NO];
         }
         else if ([user.userID isEqualToString:@"-4"]) {
+            //通讯录
+            ContactsViewController *contactVc = [[ContactsViewController alloc] init];
+            contactVc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:contactVc animated:YES];
+            
 //            TLPublicServerViewController *publicServer = [[TLPublicServerViewController alloc] init];
 //            [self setHidesBottomBarWhenPushed:YES];
 //            [self.navigationController pushViewController:publicServer animated:YES];

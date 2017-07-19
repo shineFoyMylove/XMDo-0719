@@ -445,6 +445,14 @@
 		29E7DE511F0B91FF0005D7CE /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29E7DE481F0B91FF0005D7CE /* AboutViewController.xib */; };
 		29EAF3541F0DDC2700BECDE5 /* left_view_bg1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29EAF3531F0DDC2700BECDE5 /* left_view_bg1.jpg */; };
 		787E06832DFB632688E503E7 /* libPods-XmppProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 970FC059882CF190AFB63BE2 /* libPods-XmppProject.a */; };
+		E38B2EF51F1F921400479151 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E38B2EEA1F1F921400479151 /* ContactsViewController.m */; };
+		E38B2EF61F1F921400479151 /* ContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E38B2EEB1F1F921400479151 /* ContactsViewController.xib */; };
+		E38B2EF71F1F921400479151 /* ContactTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E38B2EED1F1F921400479151 /* ContactTableCell.m */; };
+		E38B2EF81F1F921400479151 /* ContactTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E38B2EEE1F1F921400479151 /* ContactTableCell.xib */; };
+		E38B2EF91F1F921400479151 /* ContactDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E38B2EF01F1F921400479151 /* ContactDetailViewController.m */; };
+		E38B2EFA1F1F921400479151 /* ContactDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E38B2EF11F1F921400479151 /* ContactDetailViewController.xib */; };
+		E38B2EFB1F1F921400479151 /* ContactDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E38B2EF31F1F921400479151 /* ContactDetailCell.m */; };
+		E38B2EFC1F1F921400479151 /* ContactDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E38B2EF41F1F921400479151 /* ContactDetailCell.xib */; };
 		E39769FF1F1E5251007B954B /* NewFriendObject+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E39769FC1F1E5251007B954B /* NewFriendObject+CoreDataClass.m */; };
 		E3976A001F1E5251007B954B /* NewFriendObject+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E39769FE1F1E5251007B954B /* NewFriendObject+CoreDataProperties.m */; };
 /* End PBXBuildFile section */
@@ -1277,6 +1285,18 @@
 		868E28454ACBBBDB08CD0F1D /* Pods-XmppProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XmppProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XmppProject/Pods-XmppProject.debug.xcconfig"; sourceTree = "<group>"; };
 		970FC059882CF190AFB63BE2 /* libPods-XmppProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XmppProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD9451C673CC76E4CFB48654 /* Pods-XmppProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XmppProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-XmppProject/Pods-XmppProject.release.xcconfig"; sourceTree = "<group>"; };
+		E38B2EE91F1F921400479151 /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
+		E38B2EEA1F1F921400479151 /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
+		E38B2EEB1F1F921400479151 /* ContactsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactsViewController.xib; sourceTree = "<group>"; };
+		E38B2EEC1F1F921400479151 /* ContactTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactTableCell.h; sourceTree = "<group>"; };
+		E38B2EED1F1F921400479151 /* ContactTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactTableCell.m; sourceTree = "<group>"; };
+		E38B2EEE1F1F921400479151 /* ContactTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactTableCell.xib; sourceTree = "<group>"; };
+		E38B2EEF1F1F921400479151 /* ContactDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDetailViewController.h; sourceTree = "<group>"; };
+		E38B2EF01F1F921400479151 /* ContactDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDetailViewController.m; sourceTree = "<group>"; };
+		E38B2EF11F1F921400479151 /* ContactDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactDetailViewController.xib; sourceTree = "<group>"; };
+		E38B2EF21F1F921400479151 /* ContactDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDetailCell.h; sourceTree = "<group>"; };
+		E38B2EF31F1F921400479151 /* ContactDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDetailCell.m; sourceTree = "<group>"; };
+		E38B2EF41F1F921400479151 /* ContactDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactDetailCell.xib; sourceTree = "<group>"; };
 		E39769FB1F1E5251007B954B /* NewFriendObject+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NewFriendObject+CoreDataClass.h"; sourceTree = "<group>"; };
 		E39769FC1F1E5251007B954B /* NewFriendObject+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NewFriendObject+CoreDataClass.m"; sourceTree = "<group>"; };
 		E39769FD1F1E5251007B954B /* NewFriendObject+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NewFriendObject+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -3107,6 +3127,7 @@
 				292137E31F0C8FD300C663BB /* TLFriendSearchViewController.h */,
 				292137E41F0C8FD300C663BB /* TLFriendSearchViewController.m */,
 				292137E91F0C909700C663BB /* TLFriendConstant.h */,
+				E38B2EE81F1F91FB00479151 /* 本地通讯录 */,
 				292137A41F0C843700C663BB /* 好友个人资料详情 */,
 				292137A51F0C846000C663BB /* 好友设置 */,
 				292137A71F0C84AA00C663BB /* 添加好友 */,
@@ -3354,6 +3375,25 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E38B2EE81F1F91FB00479151 /* 本地通讯录 */ = {
+			isa = PBXGroup;
+			children = (
+				E38B2EE91F1F921400479151 /* ContactsViewController.h */,
+				E38B2EEA1F1F921400479151 /* ContactsViewController.m */,
+				E38B2EEB1F1F921400479151 /* ContactsViewController.xib */,
+				E38B2EEC1F1F921400479151 /* ContactTableCell.h */,
+				E38B2EED1F1F921400479151 /* ContactTableCell.m */,
+				E38B2EEE1F1F921400479151 /* ContactTableCell.xib */,
+				E38B2EEF1F1F921400479151 /* ContactDetailViewController.h */,
+				E38B2EF01F1F921400479151 /* ContactDetailViewController.m */,
+				E38B2EF11F1F921400479151 /* ContactDetailViewController.xib */,
+				E38B2EF21F1F921400479151 /* ContactDetailCell.h */,
+				E38B2EF31F1F921400479151 /* ContactDetailCell.m */,
+				E38B2EF41F1F921400479151 /* ContactDetailCell.xib */,
+			);
+			name = "本地通讯录";
+			sourceTree = "<group>";
+		};
 		E3976A011F1E5257007B954B /* NewFriends */ = {
 			isa = PBXGroup;
 			children = (
@@ -3400,7 +3440,7 @@
 				TargetAttributes = {
 					2964363F1EFE380800EFC059 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = QK43273F55;
+						DevelopmentTeam = V2MY973K7T;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -3447,6 +3487,7 @@
 				292138851F0CEE9000C663BB /* left_view_bg.jpg in Resources */,
 				2921388A1F0CEE9000C663BB /* progress_line_white.png in Resources */,
 				292138761F0CEE9000C663BB /* dialer_add.png in Resources */,
+				E38B2EFC1F1F921400479151 /* ContactDetailCell.xib in Resources */,
 				292138771F0CEE9000C663BB /* dialer_call@2x.png in Resources */,
 				296436531EFE380800EFC059 /* Assets.xcassets in Resources */,
 				2921387D1F0CEE9000C663BB /* friend_chat_room.png in Resources */,
@@ -3481,9 +3522,12 @@
 				29E7DE4D1F0B91FF0005D7CE /* CallSetViewController.xib in Resources */,
 				2921388D1F0CEE9000C663BB /* tabbar_icon1-s2@2x.png in Resources */,
 				290E89DA1F010C00007EE7E1 /* copying.txt in Resources */,
+				E38B2EF81F1F921400479151 /* ContactTableCell.xib in Resources */,
 				2921388C1F0CEE9000C663BB /* speaker_on.png in Resources */,
 				2964364E1EFE380800EFC059 /* Main.storyboard in Resources */,
+				E38B2EF61F1F921400479151 /* ContactsViewController.xib in Resources */,
 				2921386F1F0CEE9000C663BB /* adver_image2.jpg in Resources */,
+				E38B2EFA1F1F921400479151 /* ContactDetailViewController.xib in Resources */,
 				292A66C41F0B454300598707 /* MJRefresh.bundle in Resources */,
 				29E7DDB31F0B7D660005D7CE /* KeyboardCell.xib in Resources */,
 				29E7DDA01F0B7D580005D7CE /* PhoneSearchCell.xib in Resources */,
@@ -3631,6 +3675,7 @@
 				290E89FB1F010C00007EE7E1 /* XMPPRoomOccupantCoreDataStorageObject.m in Sources */,
 				29E7DE501F0B91FF0005D7CE /* AboutViewController.m in Sources */,
 				290E8A011F010C00007EE7E1 /* XMPPRoomMessageMemoryStorageObject.m in Sources */,
+				E38B2EF71F1F921400479151 /* ContactTableCell.m in Sources */,
 				292138161F0CB8FB00C663BB /* TLDBFriendStore.m in Sources */,
 				292A66BD1F0B454300598707 /* MJRefreshAutoStateFooter.m in Sources */,
 				290E8A251F010C00007EE7E1 /* XMPPMessageArchiving_Contact_CoreDataObject.m in Sources */,
@@ -3714,6 +3759,7 @@
 				292A66B11F0B454300598707 /* DCRoundSwitchKnobLayer.m in Sources */,
 				292A66E21F0B454300598707 /* FMDatabaseAdditions.m in Sources */,
 				292137E51F0C8FD300C663BB /* TLFriendSearchViewController.m in Sources */,
+				E38B2EF91F1F921400479151 /* ContactDetailViewController.m in Sources */,
 				290E8A1F1F010C00007EE7E1 /* XMPPCapabilities.xcdatamodel in Sources */,
 				292A66D71F0B454300598707 /* UIButton+WebCache.m in Sources */,
 				292137F21F0C92B000C663BB /* TLFriendDetailViewController+Delegate.m in Sources */,
@@ -3774,6 +3820,7 @@
 				29E7DE341F0B91CA0005D7CE /* SDBrowserImageView.m in Sources */,
 				292A66B81F0B454300598707 /* MJRefreshComponent.m in Sources */,
 				2964E4F81F1C4556002BCDDE /* CoreDataManager.m in Sources */,
+				E38B2EF51F1F921400479151 /* ContactsViewController.m in Sources */,
 				292A66CB1F0B454300598707 /* MMDrawerVisualState.m in Sources */,
 				29E7DE381F0B91CA0005D7CE /* SDTimeLineRefreshFooter.m in Sources */,
 				290E89E81F010C00007EE7E1 /* XMPPGroupCoreDataStorageObject.m in Sources */,
@@ -3802,6 +3849,7 @@
 				292137CC1F0C894800C663BB /* NSFileManager+TLChat.m in Sources */,
 				29E7DDF81F0B80C70005D7CE /* BaseTableViewCell.m in Sources */,
 				290E89F01F010C00007EE7E1 /* XMPPRoster.m in Sources */,
+				E38B2EFB1F1F921400479151 /* ContactDetailCell.m in Sources */,
 				292A66DC1F0B454300598707 /* UIView+WebCacheOperation.m in Sources */,
 				29E7DDB11F0B7D660005D7CE /* NumberKeyboard.m in Sources */,
 				290E8A301F010C01007EE7E1 /* XMPPAutoTime.m in Sources */,
@@ -4041,8 +4089,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yan Ping Tan (6M4WN3TR76)";
-				DEVELOPMENT_TEAM = QK43273F55;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: hui wang (Q3U4VPUA5C)";
+				DEVELOPMENT_TEAM = V2MY973K7T;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -4058,8 +4106,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.intelcent.whim;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "be164f77-6423-4a80-9aff-2088435557c0";
-				PROVISIONING_PROFILE_SPECIFIER = XBIntelcent;
+				PROVISIONING_PROFILE = "856ae3d7-b2ce-4a72-93f8-eef90940e4d9";
+				PROVISIONING_PROFILE_SPECIFIER = whIntelcent_dev;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;

@@ -65,7 +65,8 @@
         
     }else {
         XMNLog(@"unknown image type");
-        self.contentSize = CGSizeMake(100, 100);
+//        self.contentSize = CGSizeMake(100, 100);
+        self.contentSize = CGSizeMake(kXMNMessageViewMaxWidth, 200);
     }
 }
 @end
