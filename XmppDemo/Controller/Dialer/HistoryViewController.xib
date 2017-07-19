@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HistoryViewController">
+            <connections>
+                <outlet property="contentTable" destination="xVa-1B-USC" id="boJ-3e-6WF"/>
+                <outlet property="historyTableVC" destination="uvZ-Qw-1ha" id="fcD-Ar-4u7"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xVa-1B-USC">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="uvZ-Qw-1ha" id="xti-v0-e10"/>
+                        <outlet property="delegate" destination="uvZ-Qw-1ha" id="O8h-kb-y2m"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="xVa-1B-USC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0iL-um-0QI"/>
+                <constraint firstItem="xVa-1B-USC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3c3-SO-6Lc"/>
+                <constraint firstAttribute="trailing" secondItem="xVa-1B-USC" secondAttribute="trailing" id="QHG-HD-mid"/>
+                <constraint firstAttribute="bottom" secondItem="xVa-1B-USC" secondAttribute="bottom" id="ubp-7w-S3m"/>
+            </constraints>
+        </view>
+        <view contentMode="scaleToFill" id="v0q-LE-ZQ1" userLabel="TitleView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5vS-v3-bwp">
+                    <rect key="frame" x="32" y="4" width="256" height="36"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0kn-0O-2ha">
+                            <rect key="frame" x="0.0" y="0.0" width="128" height="36"/>
+                            <state key="normal" title="通话记录">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOh-bI-71J">
+                            <rect key="frame" x="128" y="0.0" width="128" height="36"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="通讯录">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.37947198275862071" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="fOh-bI-71J" secondAttribute="trailing" id="9w1-eR-R1G"/>
+                        <constraint firstItem="0kn-0O-2ha" firstAttribute="top" secondItem="5vS-v3-bwp" secondAttribute="top" id="Ana-xa-Xg8"/>
+                        <constraint firstItem="fOh-bI-71J" firstAttribute="centerY" secondItem="0kn-0O-2ha" secondAttribute="centerY" id="KTY-P5-LkC"/>
+                        <constraint firstAttribute="bottom" secondItem="0kn-0O-2ha" secondAttribute="bottom" id="KcY-Wt-JDr"/>
+                        <constraint firstItem="0kn-0O-2ha" firstAttribute="leading" secondItem="5vS-v3-bwp" secondAttribute="leading" id="O5O-5G-pZc"/>
+                        <constraint firstItem="fOh-bI-71J" firstAttribute="leading" secondItem="0kn-0O-2ha" secondAttribute="trailing" id="UMp-AT-cNN"/>
+                        <constraint firstItem="fOh-bI-71J" firstAttribute="height" secondItem="0kn-0O-2ha" secondAttribute="height" id="bYw-BX-mdU"/>
+                        <constraint firstItem="fOh-bI-71J" firstAttribute="width" secondItem="0kn-0O-2ha" secondAttribute="width" id="g6V-0H-QWf"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.89440280920000004" green="0.18019479350000001" blue="0.070989220010000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="5vS-v3-bwp" secondAttribute="bottom" constant="4" id="5b1-XI-8lO"/>
+                <constraint firstItem="5vS-v3-bwp" firstAttribute="top" secondItem="v0q-LE-ZQ1" secondAttribute="top" constant="4" id="ADh-yb-73H"/>
+                <constraint firstItem="5vS-v3-bwp" firstAttribute="centerY" secondItem="v0q-LE-ZQ1" secondAttribute="centerY" id="FKv-mb-OVa"/>
+                <constraint firstItem="5vS-v3-bwp" firstAttribute="centerX" secondItem="v0q-LE-ZQ1" secondAttribute="centerX" id="UdG-jA-pmH"/>
+                <constraint firstItem="5vS-v3-bwp" firstAttribute="width" secondItem="v0q-LE-ZQ1" secondAttribute="width" multiplier="0.8" id="of4-ed-dFI"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="332" y="814"/>
+        </view>
+        <tableViewController id="uvZ-Qw-1ha" customClass="HistoryTableViewController">
+            <connections>
+                <outlet property="view" destination="xVa-1B-USC" id="WXN-xa-NoQ"/>
+            </connections>
+        </tableViewController>
+    </objects>
+</document>

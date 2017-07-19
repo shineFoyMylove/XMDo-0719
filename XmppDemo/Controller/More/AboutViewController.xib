@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutViewController">
+            <connections>
+                <outlet property="contentTable" destination="BOL-Ul-ipb" id="I0O-Pr-bgI"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yZ5-zX-udD" userLabel="Header">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nfe-DI-pYq">
+                            <rect key="frame" x="120" y="20" width="80" height="80"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="cx7-bE-Qvg"/>
+                                <constraint firstAttribute="width" secondItem="Nfe-DI-pYq" secondAttribute="height" multiplier="1:1" id="w4h-Av-ODc"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="美信 MxChat 1.0.1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asI-n0-Dr3">
+                            <rect key="frame" x="10" y="112" width="300" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="wzA-l0-vGI"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Nfe-DI-pYq" firstAttribute="centerX" secondItem="yZ5-zX-udD" secondAttribute="centerX" id="K2m-NW-j35"/>
+                        <constraint firstAttribute="height" constant="150" id="L0d-8s-A4A"/>
+                        <constraint firstItem="asI-n0-Dr3" firstAttribute="top" secondItem="Nfe-DI-pYq" secondAttribute="bottom" constant="12" id="Q8A-5F-m66"/>
+                        <constraint firstItem="asI-n0-Dr3" firstAttribute="leading" secondItem="yZ5-zX-udD" secondAttribute="leading" constant="10" id="V7l-lq-whZ"/>
+                        <constraint firstAttribute="trailing" secondItem="asI-n0-Dr3" secondAttribute="trailing" constant="10" id="ebv-ce-XeO"/>
+                        <constraint firstItem="asI-n0-Dr3" firstAttribute="centerX" secondItem="yZ5-zX-udD" secondAttribute="centerX" id="xNc-qr-7x8"/>
+                        <constraint firstItem="Nfe-DI-pYq" firstAttribute="top" secondItem="yZ5-zX-udD" secondAttribute="top" constant="20" id="yzf-b7-TTm"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BOL-Ul-ipb">
+                    <rect key="frame" x="0.0" y="170" width="320" height="200"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="EQx-ZA-n0G"/>
+                    </constraints>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w3k-Jm-r53" userLabel="Footer">
+                    <rect key="frame" x="0.0" y="468" width="320" height="100"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MxChat公司 版权所有" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ME-Zu-L0t">
+                            <rect key="frame" x="10" y="55" width="300" height="15"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="15" id="g8E-Cj-HF9"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2017-2027 MxChat. All Rights Reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlH-VU-LSp">
+                            <rect key="frame" x="3" y="73" width="314" height="15"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="15" id="s3U-7b-1d8"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CW3-p6-uNS">
+                            <rect key="frame" x="77" y="30" width="166" height="15"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="15" id="Yc8-9K-8p7"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <state key="normal" title="MxChat软件许可及服务协议">
+                                <color key="titleColor" red="0.026110670549999999" green="0.25260550399999998" blue="0.6796875" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="3qv-gV-650"/>
+                        <constraint firstItem="zlH-VU-LSp" firstAttribute="top" secondItem="7ME-Zu-L0t" secondAttribute="bottom" constant="3" id="6LW-zq-CME"/>
+                        <constraint firstItem="7ME-Zu-L0t" firstAttribute="top" secondItem="CW3-p6-uNS" secondAttribute="bottom" constant="10" id="AG2-Qa-f07"/>
+                        <constraint firstAttribute="trailing" secondItem="7ME-Zu-L0t" secondAttribute="trailing" constant="10" id="BUt-tC-8u0"/>
+                        <constraint firstItem="zlH-VU-LSp" firstAttribute="leading" secondItem="w3k-Jm-r53" secondAttribute="leading" constant="3" id="MMW-xS-TQg"/>
+                        <constraint firstAttribute="trailing" secondItem="zlH-VU-LSp" secondAttribute="trailing" constant="3" id="SOQ-y9-dgz"/>
+                        <constraint firstItem="7ME-Zu-L0t" firstAttribute="leading" secondItem="w3k-Jm-r53" secondAttribute="leading" constant="10" id="gxs-14-fSb"/>
+                        <constraint firstItem="CW3-p6-uNS" firstAttribute="centerX" secondItem="w3k-Jm-r53" secondAttribute="centerX" id="n5f-6r-Ea8"/>
+                        <constraint firstAttribute="bottom" secondItem="zlH-VU-LSp" secondAttribute="bottom" constant="12" id="s9j-Xh-3HP"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.94423654770710064" green="0.93967501849112434" blue="0.94879807692307694" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="w3k-Jm-r53" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="FUn-gx-yV7"/>
+                <constraint firstItem="yZ5-zX-udD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="PB1-Yc-CrR"/>
+                <constraint firstAttribute="trailing" secondItem="w3k-Jm-r53" secondAttribute="trailing" id="PZ6-Yb-qdM"/>
+                <constraint firstItem="BOL-Ul-ipb" firstAttribute="top" secondItem="yZ5-zX-udD" secondAttribute="bottom" constant="20" id="Q9H-23-ApD"/>
+                <constraint firstAttribute="trailing" secondItem="BOL-Ul-ipb" secondAttribute="trailing" id="V1V-0U-a4D"/>
+                <constraint firstItem="yZ5-zX-udD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hL7-fr-Q6Q"/>
+                <constraint firstAttribute="bottom" secondItem="w3k-Jm-r53" secondAttribute="bottom" id="lA6-Cd-9aN"/>
+                <constraint firstItem="BOL-Ul-ipb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rZX-fH-kQe"/>
+                <constraint firstAttribute="trailing" secondItem="yZ5-zX-udD" secondAttribute="trailing" id="wTU-cx-bGN"/>
+            </constraints>
+        </view>
+        <view contentMode="scaleToFill" id="OGO-de-xgi" userLabel="Footer">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MxChat公司 版权所有" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1h-Md-TeJ">
+                    <rect key="frame" x="10" y="55" width="300" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="Tip-oz-7A6"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2016-2026 MxChat. All Rights Reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JRU-0F-K0u">
+                    <rect key="frame" x="3" y="73" width="314" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="bhu-SD-M4I"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iby-XQ-81J">
+                    <rect key="frame" x="77" y="30" width="166" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="wEj-ha-As3"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="MxChat软件许可及服务协议">
+                        <color key="titleColor" red="0.026110670547908905" green="0.25260550402567022" blue="0.6796875" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="JRU-0F-K0u" firstAttribute="leading" secondItem="OGO-de-xgi" secondAttribute="leading" constant="3" id="3PA-oS-VQt"/>
+                <constraint firstItem="k1h-Md-TeJ" firstAttribute="leading" secondItem="OGO-de-xgi" secondAttribute="leading" constant="10" id="Bij-YK-QYV"/>
+                <constraint firstItem="JRU-0F-K0u" firstAttribute="top" secondItem="k1h-Md-TeJ" secondAttribute="bottom" constant="3" id="Hb8-dB-r6i"/>
+                <constraint firstAttribute="bottom" secondItem="JRU-0F-K0u" secondAttribute="bottom" constant="12" id="R1G-Us-JfB"/>
+                <constraint firstItem="Iby-XQ-81J" firstAttribute="centerX" secondItem="OGO-de-xgi" secondAttribute="centerX" id="Y70-kL-9wa"/>
+                <constraint firstAttribute="trailing" secondItem="k1h-Md-TeJ" secondAttribute="trailing" constant="10" id="bos-xm-msH"/>
+                <constraint firstItem="k1h-Md-TeJ" firstAttribute="top" secondItem="Iby-XQ-81J" secondAttribute="bottom" constant="10" id="fBz-dn-rMs"/>
+                <constraint firstAttribute="trailing" secondItem="JRU-0F-K0u" secondAttribute="trailing" constant="3" id="fgJ-uq-hg8"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="26" y="648"/>
+        </view>
+        <view contentMode="scaleToFill" id="c39-6O-R9E" userLabel="Header">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZSp-My-g53">
+                    <rect key="frame" x="120" y="20" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="ZSp-My-g53" secondAttribute="height" multiplier="1:1" id="7kT-7d-Ozh"/>
+                        <constraint firstAttribute="width" constant="80" id="qLa-7P-gwt"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="美信 MxChat 1.0.1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05r-EN-otj">
+                    <rect key="frame" x="10" y="112" width="300" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="gAm-9S-M9v"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="05r-EN-otj" firstAttribute="centerX" secondItem="c39-6O-R9E" secondAttribute="centerX" id="MVW-DI-ao6"/>
+                <constraint firstItem="05r-EN-otj" firstAttribute="top" secondItem="ZSp-My-g53" secondAttribute="bottom" constant="12" id="Ssv-DE-v1f"/>
+                <constraint firstItem="ZSp-My-g53" firstAttribute="centerX" secondItem="c39-6O-R9E" secondAttribute="centerX" id="VY5-g0-P41"/>
+                <constraint firstItem="05r-EN-otj" firstAttribute="leading" secondItem="c39-6O-R9E" secondAttribute="leading" constant="10" id="cZw-EE-5eQ"/>
+                <constraint firstItem="ZSp-My-g53" firstAttribute="top" secondItem="c39-6O-R9E" secondAttribute="top" constant="20" id="tC5-E2-xMK"/>
+                <constraint firstAttribute="trailing" secondItem="05r-EN-otj" secondAttribute="trailing" constant="10" id="tUi-2w-Z3v"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="38" y="452"/>
+        </view>
+    </objects>
+</document>

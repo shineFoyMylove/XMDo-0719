@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="HistoryDetailCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10-25 12:58:22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJr-fG-ohy">
+                        <rect key="frame" x="10" y="12" width="98" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="dUS-vf-Tkv"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                        <color key="textColor" red="0.494511217948718" green="0.494511217948718" blue="0.494511217948718" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10秒" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSb-dW-NL3">
+                        <rect key="frame" x="280" y="12" width="30" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="lB5-ol-FEB"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.097135416666666696" green="0.097135416666666696" blue="0.097135416666666696" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xjE-ER-wep" userLabel="ButtomLine">
+                        <rect key="frame" x="8" y="42" width="304" height="1"/>
+                        <color key="backgroundColor" red="0.97592147435897436" green="0.97592147435897436" blue="0.97592147435897436" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="CgQ-gL-nnc"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="呼出" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4VL-vV-NrT">
+                        <rect key="frame" x="145" y="12" width="30" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="tVp-jr-3YM"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.25897435897435883" green="0.25897435897435883" blue="0.25897435897435883" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="xjE-ER-wep" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="38X-9p-2X6"/>
+                    <constraint firstAttribute="trailing" secondItem="WSb-dW-NL3" secondAttribute="trailing" constant="10" id="3fF-CL-qhe"/>
+                    <constraint firstItem="WJr-fG-ohy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="BJg-E3-hFb"/>
+                    <constraint firstAttribute="bottom" secondItem="xjE-ER-wep" secondAttribute="bottom" id="LqF-jp-6F2"/>
+                    <constraint firstAttribute="trailing" secondItem="xjE-ER-wep" secondAttribute="trailing" constant="8" id="Oxy-Ss-BTS"/>
+                    <constraint firstItem="4VL-vV-NrT" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="U4L-D0-btq"/>
+                    <constraint firstItem="WJr-fG-ohy" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="XMd-3A-Hdi"/>
+                    <constraint firstItem="WSb-dW-NL3" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="mVu-CO-BA7"/>
+                    <constraint firstItem="4VL-vV-NrT" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="qrU-3a-4d3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dateLabel" destination="WJr-fG-ohy" id="ifP-5d-uYe"/>
+                <outlet property="durationLab" destination="WSb-dW-NL3" id="NuI-t6-aZE"/>
+                <outlet property="typeLabel" destination="4VL-vV-NrT" id="N29-4f-bIX"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

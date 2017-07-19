@@ -1,0 +1,115 @@
+//
+//  IM_Demo_Prefix.pch
+//  WHIMDemo1
+//
+//  Created by IntelcentMac on 17/3/24.
+//  Copyright © 2017年 wh_shine. All rights reserved.
+//
+
+#ifndef IM_Demo_Prefix_pch
+#define IM_Demo_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#import "Config.h"
+
+#endif
+
+
+//#define DEFINE_SINGLETON_HEADER(className)\
+//\
+//+(className *)shared##className;
+//
+//#define DEFINE_SINGLETON_IMPLEMENTATION(className)\
+//\
+//static className *shared##className = nil;\
+//static dispatch_once_t pred;\
+//\
+//+(className *)shared##className{\
+//dispatch_once(&pred, ^{ \
+//shared##className = [[super allocWithZone:NULL] init]; \
+//}); \
+//return share##className;\
+//}\
+//\
+//+ (id)allocWithZone:(NSZone *)zone { \
+//return [self shared##className];\
+//} \
+//\
+//- (id)copyWithZone:(NSZone *)zone { \
+//return self; \
+//}
+
+
+#define singleH(name) +(instancetype)share##name;
+
+#if __has_feature(objc_arc)
+
+#define singleM(name) static id _instance;\
++(instancetype)allocWithZone:(struct _NSZone *)zone\
+{\
+static dispatch_once_t onceToken;\
+dispatch_once(&onceToken, ^{\
+_instance = [super allocWithZone:zone];\
+});\
+return _instance;\
+}\
+\
++(instancetype)share##name\
+{\
+return [[self alloc]init];\
+}\
+-(id)copyWithZone:(NSZone *)zone\
+{\
+return _instance;\
+}\
+\
+-(id)mutableCopyWithZone:(NSZone *)zone\
+{\
+return _instance;\
+}
+#else
+#define singleM static id _instance;\
++(instancetype)allocWithZone:(struct _NSZone *)zone\
+{\
+static dispatch_once_t onceToken;\
+dispatch_once(&onceToken, ^{\
+_instance = [super allocWithZone:zone];\
+});\
+return _instance;\
+}\
+\
++(instancetype)shareTools\
+{\
+return [[self alloc]init];\
+}\
+-(id)copyWithZone:(NSZone *)zone\
+{\
+return _instance;\
+}\
+-(id)mutableCopyWithZone:(NSZone *)zone\
+{\
+return _instance;\
+}\
+-(oneway void)release\
+{\
+}\
+\
+-(instancetype)retain\
+{\
+return _instance;\
+}\
+\
+-(NSUInteger)retainCount\
+{\
+return MAXFLOAT;\
+}
+#endif
+
+
+#endif /* IM_Demo_Prefix_pch */

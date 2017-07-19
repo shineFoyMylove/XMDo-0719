@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="BaseTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_default_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="jP9-TQ-9PN">
+                        <rect key="frame" x="12" y="12.5" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="jP9-TQ-9PN" secondAttribute="height" multiplier="1:1" id="ZUP-IT-Cuv"/>
+                            <constraint firstAttribute="width" constant="25" id="lKT-4A-L2w"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="内容展示1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqm-vp-QhR">
+                        <rect key="frame" x="52" y="15.5" width="208" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="wR0-Nx-IhK"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="jP9-TQ-9PN" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="4nd-bD-gNe"/>
+                    <constraint firstAttribute="trailing" secondItem="mqm-vp-QhR" secondAttribute="trailing" constant="60" id="l2b-vW-pbU"/>
+                    <constraint firstItem="mqm-vp-QhR" firstAttribute="leading" secondItem="jP9-TQ-9PN" secondAttribute="trailing" constant="15" id="qHn-zn-A6z"/>
+                    <constraint firstItem="mqm-vp-QhR" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="t39-GF-hpS"/>
+                    <constraint firstItem="jP9-TQ-9PN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="uZf-VH-URt"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="R_textLabel" destination="mqm-vp-QhR" id="mEq-vD-vv1"/>
+                <outlet property="imageIcon" destination="jP9-TQ-9PN" id="92M-7l-VA5"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="cell_default_icon.png" width="60" height="60"/>
+    </resources>
+</document>
