@@ -91,6 +91,8 @@ NSString *const NTCurrentUserInfo = @"CurrentUserInfo";
     [self clearUserInfo];  //清除Ó
     [[XMPPTool shareXMPPTool] xmppLogout];  //注销xmpp
     
+    UDSetObject(username_preference, @"");  //清除当前登录账号
+    
 //    dispatch_async(GCDQueueDEFAULT, ^{
 //        [[EMClient sharedClient] logout:YES];  //解除绑定，不接受消息推送
 //    });

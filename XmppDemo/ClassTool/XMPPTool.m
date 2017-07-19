@@ -453,7 +453,8 @@ static XMPPTool *_shareInstance;
 
 //申请添加好友
 -(void)xmppRoster:(XMPPRoster *)sender didReceivePresenceSubscriptionRequest:(XMPPPresence *)presence{
-    NSLog(@"ID: %@ 状态: %@",presence.from.user,presence.type);
+    
+    NSLog(@"Mehtod:%s\nID: %@ 状态: %@",__func__,presence.from.user,presence.type);
     
 //    NSString *receiveUser = presence.from.user;
 //    
@@ -468,16 +469,17 @@ static XMPPTool *_shareInstance;
     //好友列表回调
 -(void)xmppRoster:(XMPPRoster *)sender didReceiveRosterItem:(DDXMLElement *)item{
     
-    NSLog(@"ID: %@",item);
+    NSLog(@"Mehtod:%s\nID: %@",__func__,item);
 }
 
 -(void)xmppRoster:(XMPPRoster *)sender didReceiveRosterPush:(XMPPIQ *)iq{
-    NSLog(@"ID: %@",iq);
+    NSLog(@"Mehtod:%s\nID: %@",__func__,iq);
 }
 
     //回调 - 新的好友
 -(void)xmppStream:(XMPPStream *)sender didReceivePresence:(XMPPPresence *)presence{
-    NSLog(@"ID: %@ 状态: %@",presence.from,presence.type);
+    
+    NSLog(@"Mehtod:%s\nID: %@ 状态: %@",__func__,presence.from,presence.type);
 }
 
 #pragma mark - 好友
@@ -535,5 +537,17 @@ static XMPPTool *_shareInstance;
     AlertTipWithMessage(@"成功添加");
 }
 
+/**
+ 拒绝好友申请
+ @param name 账号
+ */
+-(void)xmppDisagreeWithFriendRequest:(NSString *)name{
+    XMPPJID *jidname = [XMPPJID jidWithUser:name domain:_domain resource:_resource];
+    
+    [self.roster rejectPresenceSubscriptionRequestFrom:jidname];
+    [self.roster removeUser:jidname];
+    
+    NSLog(@"拒绝好友: %@",name);
+}
 
 @end

@@ -39,6 +39,8 @@ typedef void (^LeftBarButtonActionBlock) (void);
  */
 -(void)popViewControllerAnimated:(BOOL)animated;
 
+//延时 pop
+-(void)popViewControllerAnimated:(BOOL)animated delay:(BOOL)delay;
 
 /**
  *  设置带文字的左导航按钮并且回调方法

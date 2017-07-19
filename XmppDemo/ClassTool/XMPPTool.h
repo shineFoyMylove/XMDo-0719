@@ -105,4 +105,12 @@ typedef void(^XMPPResultBlock)(XMPPResultType type);
  */
 -(void)xmppAgreeWithFriendRequest:(NSString *)name;
 
+
+/**
+ 拒绝好友申请
+ @param name 账号
+ */
+-(void)xmppDisagreeWithFriendRequest:(NSString *)name;
+
+
 @end

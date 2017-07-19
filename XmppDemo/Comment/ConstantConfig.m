@@ -21,5 +21,7 @@ NSString *const NTViewPushForLeftDrawer = @"ViewPushInLeftDrawerFromMainTabar";
 //新的好友通知
 NSString *const NTIMHaveNewFriend = @"NTIMHaveNewFriendNotify";
 
+//刷新好友列表
+NSString *const NTIMUpdateFirendList = @"NTIMUpdateFirendListNotify";
 
 

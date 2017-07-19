@@ -21,6 +21,10 @@ extern NSString *const NTViewPushForLeftDrawer;
  新的好友通知 */
 extern NSString *const NTIMHaveNewFriend;
 
+/**
+ 刷新好友列表 */
+extern NSString *const NTIMUpdateFirendList;
+
 
 #pragma mark ***** 枚举声明 *****
 

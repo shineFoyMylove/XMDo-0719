@@ -73,7 +73,21 @@
 
     // 普通pop，popRootViewController
 -(void)popViewControllerAnimated:(BOOL)animated{
+    [self.view endEditing:YES];
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)popViewControllerAnimated:(BOOL)animated delay:(BOOL)delay{
+    [self.view endEditing:YES];
+    
+    if (delay) {
+        WkSelf(weakSelf);
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [weakSelf popViewControllerAnimated:YES];
+        });
+    }else{
+        [self popViewControllerAnimated:YES];
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated{

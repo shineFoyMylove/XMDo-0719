@@ -131,8 +131,8 @@
                   symbolName = "-[XMNAudioRemoteFileProvider handleRequestReceivedData:]"
                   moduleName = "XMNChat"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/IntelcentMac/Documents/wh_Code/MyObject/MyXMPP/XmppDemo-0714/XMNChatFramework/XMNChatFramework/Vendors/XMNAudio/XMNAudioPlayer/XMNAudioFileProvider.m"
-                  timestampString = "522066708.987673"
+                  urlString = "file:///Users/IntelcentMac/Documents/wh_Code/MyObject/MyXMPP/XmppDemo-0719/XMNChatFramework/XMNChatFramework/Vendors/XMNAudio/XMNAudioPlayer/XMNAudioFileProvider.m"
+                  timestampString = "522147124.873381"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "446"
@@ -146,8 +146,8 @@
                   symbolName = "-[XMNAudioRemoteFileProvider handleRequestReceivedData:]"
                   moduleName = "XMNChat"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/IntelcentMac/Documents/wh_Code/MyObject/MyXMPP/XmppDemo-0714/XMNChatFramework/XMNChatFramework/Vendors/XMNAudio/XMNAudioPlayer/XMNAudioFileProvider.m"
-                  timestampString = "522066708.991542"
+                  urlString = "file:///Users/IntelcentMac/Documents/wh_Code/MyObject/MyXMPP/XmppDemo-0719/XMNChatFramework/XMNChatFramework/Vendors/XMNAudio/XMNAudioPlayer/XMNAudioFileProvider.m"
+                  timestampString = "522147124.874622"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "446"
@@ -339,12 +339,74 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "XmppDemo/AppDelegate.m"
-            timestampString = "522066707.445514"
+            filePath = "XmppDemo/Controller/Contact/NewFriendTableViewCell.m"
+            timestampString = "522147123.688275"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "185"
+            endingLineNumber = "185">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XmppDemo/ClassTool/XMPPTool.m"
+            timestampString = "522145008.844564"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "457"
+            endingLineNumber = "457"
+            landmarkName = "-xmppRoster:didReceivePresenceSubscriptionRequest:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XmppDemo/ClassTool/XMPPTool.m"
+            timestampString = "522144947.946187"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "472"
+            endingLineNumber = "472"
+            landmarkName = "-xmppRoster:didReceiveRosterItem:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XmppDemo/ClassTool/XMPPTool.m"
+            timestampString = "522144947.946187"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "476"
+            endingLineNumber = "476"
+            landmarkName = "-xmppRoster:didReceiveRosterPush:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XmppDemo/ClassTool/XMPPTool.m"
+            timestampString = "522144947.946187"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "481"
+            endingLineNumber = "481"
             landmarkName = "-xmppStream:didReceivePresence:"
             landmarkType = "7">
          </BreakpointContent>
@@ -355,60 +417,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "XmppDemo/Controller/Contact/NewFriendTableViewCell.m"
-            timestampString = "522066018.458869"
+            filePath = "XmppDemo/Controller/Contact/TLFriendsViewController.m"
+            timestampString = "522142809.375577"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "+featchAllRequest"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "XmppDemo/Controller/Contact/NewFriendTableViewCell.m"
-            timestampString = "522066194.159834"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
-            landmarkName = "-insertManagedObject"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "XmppDemo/ClassTool/XMPPTool.m"
-            timestampString = "522066707.445514"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "453"
-            endingLineNumber = "453"
-            landmarkName = "-xmppRoster:didReceivePresenceSubscriptionRequest:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "XmppDemo/ClassTool/XMPPTool.m"
-            timestampString = "522066707.445514"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "464"
-            endingLineNumber = "464"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "-xmppRoster:didReceiveRosterItem:"
             landmarkType = "7">
          </BreakpointContent>
@@ -416,32 +430,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "XmppDemo/ClassTool/XMPPTool.m"
-            timestampString = "522066707.445514"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "469"
-            endingLineNumber = "469"
-            landmarkName = "-xmppRoster:didReceiveRosterPush:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XmppDemo/AppDelegate.m"
-            timestampString = "522066537.697085"
+            timestampString = "522145413.897368"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "-xmppRoster:didReceivePresenceSubscriptionRequest:"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "-xmppStream:didReceivePresence:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XmppDemo/Controller/Contact/NewFriendViewController.m"
+            timestampString = "522145601.572261"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "-tableView:commitEditingStyle:forRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -452,12 +466,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XmppDemo/ClassTool/XMPPTool.m"
-            timestampString = "522066683.541249"
+            timestampString = "522147038.455185"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "452"
-            endingLineNumber = "452"
-            landmarkName = "-xmppRoster:didReceivePresenceSubscriptionRequest:"
+            startingLineNumber = "535"
+            endingLineNumber = "535"
+            landmarkName = "-xmppAgreeWithFriendRequest:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -54,6 +54,8 @@
 }
 
 -(void)setObjItem:(NewFriendObject *)objItem{
+    _objItem = objItem;
+    
     if ([objItem isKindOfClass:[NewFriendObject class]]) {
         NewFriendObject *object = (NewFriendObject *)objItem;
         
@@ -113,7 +115,14 @@
     //同意
 -(IBAction)ClickAction:(id)sender{
     if (self.state == TLNewFriendApplyStateNew) {
-        AlertTipWithMessage(@"同意添加");
+        
+        if (_objItem.phone.length == 0) {
+            NSLog(@"号码错误");
+            return;
+        }
+        
+        [[XMPPTool shareXMPPTool] xmppAgreeWithFriendRequest:_objItem.phone];
+        
         if (agreeCompliteBlock) {
             agreeCompliteBlock(YES);
         }

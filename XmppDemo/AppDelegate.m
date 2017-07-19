@@ -49,9 +49,9 @@
     
     //添加代理回调
     //好友添加以及上线
-    [[XMPPTool shareXMPPTool].stream addDelegate:self delegateQueue:dispatch_get_main_queue()];
-    [[XMPPTool shareXMPPTool].roster addDelegate:self delegateQueue:dispatch_get_main_queue()];
-    
+    XMPPStream *stream = [XMPPTool shareXMPPTool].stream;
+    [stream addDelegate:self delegateQueue:dispatch_get_main_queue()];
+    [stream addDelegate:self delegateQueue:dispatch_get_main_queue()];
     
     return YES;
 }
@@ -83,10 +83,55 @@
 
 #pragma mark - XMPPRosterDelegate监听好友请求,收到好友请求时调用该代理方法
 
-    //在线 - 申请添加好友
+    //用户在线，有人请求申请订阅
 -(void)xmppRoster:(XMPPRoster *)sender didReceivePresenceSubscriptionRequest:(XMPPPresence *)presence{
-    BOOL isExist = NO;
+    
+    [self receiveSubscriptionRequest:presence];
+    
+}
+
+    //离线 - 新的好友
+-(void)xmppStream:(XMPPStream *)sender didReceivePresence:(XMPPPresence *)presence{
+    
+    NSLog(@"ID: %@ 状态: %@",presence.from,presence.type);
     NSString *receiveUser = presence.from.user;
+    
+    NSString *username = UDGetString(username_preference);
+    
+    
+    if ([presence.type isEqualToString:@"available"] && [presence.from.user isEqualToString:username]) {
+        //我好友的上线状态
+        //发送上线通知
+    }
+    
+    if ([presence.type isEqualToString:@"unavailable"] && [presence.from.user isEqualToString:username]) {
+        //我好友的上线状态
+        //发送下线通知
+    }
+    
+        //收到对方取消订阅我的消息 (被删除)
+    if ([presence.type isEqualToString:@"unsubscribe"]) {
+        //删除
+        [[XMPPTool shareXMPPTool].roster removeUser:presence.from];
+    }
+    
+    if ([presence.type isEqualToString:@"subscribe"]) {
+        //用户离线-申请订阅
+        [self receiveSubscriptionRequest:presence];
+    }
+    
+}
+
+    //接收到好友请求订阅
+-(void)receiveSubscriptionRequest:(XMPPPresence *)presence{
+    
+    NSString *receiveUser = presence.from.user;
+    
+    NSString *username = UDGetString(username_preference);
+    BOOL isOwner = [username isEqualToString:receiveUser];
+    
+    BOOL isExist = NO;
+    
     NSArray *allNewApply =  [NewFriendObject featchAllRequest];
     for (NewFriendObject *obj in allNewApply) {
         if ([obj.phone isEqualToString:receiveUser]) {
@@ -94,37 +139,26 @@
         }
     }
     
-    if (!isExist) {
-        
+    if (receiveUser.length == 0) {
+        NSLog(@"other error: %@",presence);
+        return;
+    }
+    
+    NSArray *friends = [TLFriendHelper sharedFriendHelper].friendsData;
+    for (TLUser *user in friends) {
+        if ([user.userID isEqualToString:receiveUser]) {
+            isExist = YES;
+        }
+    }
+    
+    if (!isExist && !isOwner) {
         NewFriendObject *newObj = [[NewFriendObject alloc] init];
         newObj.phone = receiveUser;
-        newObj.name  = [NSString stringWithFormat:@"测试: %@",receiveUser];
+        newObj.name  = [NSString stringWithFormat:@"新增测试: %@",receiveUser];
         newObj.state = TLNewFriendApplyStateNew;
         [newObj insert];
     }
 }
-
-    //离线 - 新的好友
--(void)xmppStream:(XMPPStream *)sender didReceivePresence:(XMPPPresence *)presence{
-//    BOOL isExist = NO;
-//    NSString *receiveUser = presence.from.user;
-//    NSArray *allNewApply =  [NewFriendObject featchAllRequest];
-//    for (NewFriendObject *obj in allNewApply) {
-//        if ([obj.phone isEqualToString:receiveUser]) {
-//            isExist = YES;
-//        }
-//    }
-//    
-//    if (!isExist) {
-//        NewFriendObject *newObj = [[NewFriendObject alloc] init];
-//        newObj.phone = receiveUser;
-//        newObj.name  = [NSString stringWithFormat:@"新增测试: %@",receiveUser];
-//        newObj.state = TLNewFriendApplyStateNew;
-//        [newObj insert];
-//    }
-}
-
-
 
 #pragma mark - UIApplication Delegate
 

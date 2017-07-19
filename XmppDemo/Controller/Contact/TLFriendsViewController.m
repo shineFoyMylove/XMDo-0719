@@ -15,8 +15,12 @@
 #import "AddFriendViewController.h"
 #import "AppDelegate.h"
 #import "TestChatViewModel.h"
+#import "NewFriendObject+CoreDataClass.h"
 
 @interface TLFriendsViewController ()<XMPPRosterDelegate>
+{
+    NSMutableArray *TmpNewUsers;
+}
 
 @property (nonatomic, strong) UILabel *footerLabel;
 
@@ -54,13 +58,24 @@
         
     }];
     
+    
+    [[XMPPTool shareXMPPTool].roster addDelegate:self delegateQueue:dispatch_get_main_queue()];
     [self loadXmppFetContacts];  //xmpp好友获取
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(UpdateFirendList:) name:NTIMUpdateFirendList object:nil];
+    
+    TmpNewUsers = [[NSMutableArray alloc] init];
+    
+}
+
+-(void)UpdateFirendList:(NSNotification *)notify{
+    [self loadXmppFetContacts];
 }
 
 -(void)loadXmppFetContacts{
+    [TmpNewUsers removeAllObjects];
     [[XMPPTool shareXMPPTool].roster fetchRoster];
-    [[XMPPTool shareXMPPTool].roster addDelegate:self delegateQueue:dispatch_get_main_queue()];
-    
 }
 
 -(void)dealloc{
@@ -72,10 +87,11 @@
     [[XMPPTool shareXMPPTool].roster removeDelegate:self];
     
     [self.friendHelper friendReset];  //重置
+    NotificationRemoveWithName(self, NTIMUpdateFirendList, nil);
 }
 
 -(void)xmppRoster:(XMPPRoster *)sender didReceiveRosterItem:(DDXMLElement *)item{
-    NSLog(@"%@",[[item attributeForName:@"subscription"] stringValue]);
+    NSLog(@"Roster Item: %@",[[item attributeForName:@"subscription"] stringValue]);
     
     NSString *subscription = [item attributeStringValueForName:@"subscription"];
     if ([subscription isEqualToString:@"both"] ||
@@ -85,26 +101,70 @@
         NSString *SJid = [item attributeForName:@"jid"].stringValue;
         XMPPJID *jid = [XMPPJID jidWithString:SJid];
         
-        bool isExit = NO;
+        bool isExist = NO;
         
-        for (TLUserGroup *group in self.data) {
-            for (TLUser *user in group.users) {
-                if ([user.username isEqualToString:jid.user]) {
-                    isExit = YES;
-                }
+//        for (TLUserGroup *group in self.data) {
+//            for (TLUser *user in group.users) {
+//                if ([user.username isEqualToString:jid.user]) {
+//                    isExit = YES;
+//                }
+//            }
+//        }
+        
+        
+        NSArray *friends = [NSArray arrayWithArray:TmpNewUsers];
+        for (TLUser *user in friends) {
+            if ([user.userID isEqualToString:SJid]) {
+                isExist = YES;
             }
         }
-        if (!isExit) {
+        
+        if (!isExist) {
+            
             TLUser *tmpUser = [[TLUser alloc] init];
             tmpUser.userID = jid.user;  //uid，phone一致
             tmpUser.username = jid.user;
             tmpUser.nikeName = [NSString stringWithFormat:@"测试账号:%@",jid.user];
             
-             [_friendHelper addFriendWithUser:@[tmpUser]];  //添加
+            [TmpNewUsers addObject:tmpUser];
+            
+            [self setSelection:@selector(compliteAddFriendWithUsers:) withInfo:nil delay:0.5];
         }
+        
+        //已经申请通过
+        NSArray *newFris = [NewFriendObject featchAllRequest];
+        for (NewFriendObject *obj in newFris) {
+            if ([SJid isEqualToString:obj.phone]) {
+                obj.state = TLNewFriendApplyStateAgreed;
+                
+                NotificationPost(NTIMHaveNewFriend, nil);
+            }
+        }
+        
+    }
+}
+
+    //延迟执行 select ，若多次触发，不断时间重置
+-(void)setSelection:(SEL)select withInfo:(id)info delay:(CGFloat)delayTime{
+    
+    static NSTimer *_timer = nil;
+    
+    if(_timer){
+        [_timer invalidate];
+        _timer = nil;
     }
     
+    _timer = [NSTimer scheduledTimerWithTimeInterval:delayTime target:self selector:select userInfo:nil repeats:NO];
+    
 }
+
+    //最终添加
+-(void)compliteAddFriendWithUsers:(id)info{
+    
+    [_friendHelper addFriendWithUser:TmpNewUsers];  //添加
+}
+
+
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];

@@ -70,7 +70,6 @@
     AddFriendViewController *addFriendVC = [[AddFriendViewController alloc] init];
     [addFriendVC setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:addFriendVC animated:YES];
-    
 }
 
 #pragma mark UITableViewDelegate
@@ -99,6 +98,7 @@
         if (result) {
             weakObj.state = TLNewFriendApplyStateAgreed;
             [weakSelf.NewFriendList reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:(UITableViewRowAnimationFade)];
+            NotificationPost(NTIMUpdateFirendList, nil);
         }
     }];
     
@@ -125,10 +125,16 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         //删除
         NewFriendObject *obj = self.NewFriendsArray[indexPath.row];
+        NSString *phoneStr = [NSString stringWithString:obj.phone];
         if ([obj remove]) {
+            //拒绝
+            [[XMPPTool shareXMPPTool] xmppDisagreeWithFriendRequest:phoneStr];
+            
             [self.NewFriendsArray removeObject:obj];
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:(UITableViewRowAnimationFade)];
+            
         }
+        
     }
 }
 

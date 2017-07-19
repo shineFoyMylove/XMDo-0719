@@ -45,10 +45,14 @@
 
     //请求添加账号
 -(void)sendRequestAddFriend{
+    
     if (_accountField.text.length == 0) {
-        AlertTipWithMessage(@"账号不能为空");
+//        AlertTipWithMessage(@"账号不能为空");
+        [MBProgressHUD showError:@"账号不能为空"];
         return;
     }
+    
+    [_accountField resignFirstResponder];
     
     WkSelf(weakSelf);
     [[XMPPTool shareXMPPTool] xmppAddFriendSubscribe:_accountField.text complite:^(BOOL result) {
@@ -63,7 +67,7 @@
             }
             
             AlertTipWithMessage(@"添加成功");
-            [weakSelf popViewControllerAnimated:YES];
+            [weakSelf popViewControllerAnimated:YES delay:YES];
         }
         NSLog(@"Complite");
     }];
