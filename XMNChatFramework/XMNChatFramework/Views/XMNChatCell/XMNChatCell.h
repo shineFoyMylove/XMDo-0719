@@ -46,4 +46,7 @@
 - (void)messageCellDidTapContent:(XMNChatCell *)cell;
 - (void)messageCellDidDoubleTapContent:(XMNChatCell *)cell;
 
+- (void)messageCellMenuItemDidClickAtIndex:(NSInteger)index;  //menu选择
+
+
 @end

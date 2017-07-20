@@ -33,6 +33,7 @@
         _state = aState;
         _owner = aOwner;
         _time = aTime;
+        
     }
     return self;
 }

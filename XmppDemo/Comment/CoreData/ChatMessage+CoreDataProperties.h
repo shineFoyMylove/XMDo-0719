@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSString *conversationId;  /**<会话 Id, 单聊-对方phone, 群聊-群组id */
 @property (nullable, nonatomic, copy) NSString *userphone;      /**<当前登录用户 phone */
 @property (nullable, nonatomic, copy) NSString *messageID;  /**<消息 Id, 服务器提供的 消息唯一标识 */
+@property (nonatomic) int32_t sendState;  /**<发送状态 10-发送中 20-发送成 30-发送失败 */
 
     //From
 @property (nullable, nonatomic, copy) NSString *from_name;

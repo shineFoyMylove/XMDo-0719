@@ -48,6 +48,7 @@
     NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:self.messageView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.messageContentView attribute:NSLayoutAttributeTop multiplier:1.0 constant:aMessageType != XMNMessageTypeText ? 0 : 6.f];
     
     NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:self.messageView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.messageContentView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:aMessageType != XMNMessageTypeText ? 0 :-16.f];
+    
     self.messageViewConstraints = @[leftConstraint,rightConstraint,topConstraint,bottomConstraint];
     [self.messageContentView addConstraints:self.messageViewConstraints];
 }

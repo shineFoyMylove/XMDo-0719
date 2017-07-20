@@ -132,7 +132,7 @@
                   moduleName = "XMNChat"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/IntelcentMac/Documents/wh_Code/MyObject/MyXMPP/XmppDemo-0719/XMNChatFramework/XMNChatFramework/Vendors/XMNAudio/XMNAudioPlayer/XMNAudioFileProvider.m"
-                  timestampString = "522147124.873381"
+                  timestampString = "522234674.937196"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "446"
@@ -147,7 +147,7 @@
                   moduleName = "XMNChat"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/IntelcentMac/Documents/wh_Code/MyObject/MyXMPP/XmppDemo-0719/XMNChatFramework/XMNChatFramework/Vendors/XMNAudio/XMNAudioPlayer/XMNAudioFileProvider.m"
-                  timestampString = "522147124.874622"
+                  timestampString = "522234674.939867"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "446"
@@ -291,22 +291,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "XmppDemo/Controller/Conversation/TSYChatViewController.m"
-            timestampString = "522049173.130948"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "443"
-            endingLineNumber = "443"
-            landmarkName = "-xmppMessageReceive:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "XMNChatFramework/XMNChatFramework/Vendors/XMNAudio/XMNAudioPlayer/XMNAudioFileProvider.m"
             timestampString = "521708289.660252"
             startingColumnNumber = "9223372036854775807"
@@ -414,22 +398,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "XmppDemo/Controller/Contact/TLFriendsViewController.m"
-            timestampString = "522142809.375577"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "-xmppRoster:didReceiveRosterItem:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -472,6 +440,86 @@
             startingLineNumber = "535"
             endingLineNumber = "535"
             landmarkName = "-xmppAgreeWithFriendRequest:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XMNChatFramework/XMNChatFramework/Vendors/YYText/YYTextView.m"
+            timestampString = "522227280.09129"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2914"
+            endingLineNumber = "2914"
+            landmarkName = "-paste:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XMNChatFramework/XMNChatFramework/Vendors/YYText/YYTextView.m"
+            timestampString = "522227288.203496"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2908"
+            endingLineNumber = "2908"
+            landmarkName = "-copy:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XmppDemo/Controller/Conversation/TSYChatViewController.m"
+            timestampString = "522234058.281629"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "-reloadCurrentConversationMessages"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XMNChatFramework/XMNChatFramework/Controllers/XMNChatController.m"
+            timestampString = "522233737.519481"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
+            landmarkName = "-tableViewReload"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XmppDemo/Controller/Contact/TLFriendsViewController.m"
+            timestampString = "522234769.353386"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

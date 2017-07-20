@@ -28,6 +28,8 @@
 
 +(void)showSysAlert:(NSString *)text;   /**< AlertView 提示框 */
 
++(void)calculateUsedTime:(void(^)())action;  /**<计算某个方法耗时 */
+
 #pragma mark 线程
 /**
  将某个UI更新操作放入主线程执行 */

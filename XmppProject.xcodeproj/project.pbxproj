@@ -369,6 +369,7 @@
 		2964E51D1F1CC2DE002BCDDE /* ChatConversation+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2964E51A1F1CC2DE002BCDDE /* ChatConversation+CoreDataClass.m */; };
 		2964E51E1F1CC2DE002BCDDE /* ChatConversation+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2964E51C1F1CC2DE002BCDDE /* ChatConversation+CoreDataProperties.m */; };
 		2999366D1F14D0440029B5D7 /* IMChatMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2999366C1F14D0440029B5D7 /* IMChatMessage.m */; };
+		29C30BF91F204AF700B417D7 /* ChatHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C30BF81F204AF700B417D7 /* ChatHelper.m */; };
 		29D44B8D1F0204E40037BB7C /* XMPPTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D44B8C1F0204E40037BB7C /* XMPPTool.m */; };
 		29D44B931F0205E30037BB7C /* XMPPServerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D44B921F0205E30037BB7C /* XMPPServerTool.m */; };
 		29E7DD9C1F0B7D580005D7CE /* DialerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E7DD841F0B7D580005D7CE /* DialerViewController.m */; };
@@ -1153,6 +1154,8 @@
 		2964E51C1F1CC2DE002BCDDE /* ChatConversation+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ChatConversation+CoreDataProperties.m"; sourceTree = "<group>"; };
 		2999366B1F14D0440029B5D7 /* IMChatMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMChatMessage.h; sourceTree = "<group>"; };
 		2999366C1F14D0440029B5D7 /* IMChatMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMChatMessage.m; sourceTree = "<group>"; };
+		29C30BF71F204AF700B417D7 /* ChatHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatHelper.h; sourceTree = "<group>"; };
+		29C30BF81F204AF700B417D7 /* ChatHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatHelper.m; sourceTree = "<group>"; };
 		29D44B8B1F0204E40037BB7C /* XMPPTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPTool.h; sourceTree = "<group>"; };
 		29D44B8C1F0204E40037BB7C /* XMPPTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMPPTool.m; sourceTree = "<group>"; };
 		29D44B911F0205E30037BB7C /* XMPPServerTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPServerTool.h; sourceTree = "<group>"; };
@@ -2252,6 +2255,8 @@
 		292138351F0CD49800C663BB /* ChatViewController */ = {
 			isa = PBXGroup;
 			children = (
+				29C30BF71F204AF700B417D7 /* ChatHelper.h */,
+				29C30BF81F204AF700B417D7 /* ChatHelper.m */,
 				2909D7011F0F12C300494EE1 /* TSYChatViewController.h */,
 				2909D7021F0F12C300494EE1 /* TSYChatViewController.m */,
 			);
@@ -3440,7 +3445,7 @@
 				TargetAttributes = {
 					2964363F1EFE380800EFC059 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = V2MY973K7T;
+						DevelopmentTeam = QK43273F55;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -3640,6 +3645,7 @@
 				290E8A0D1F010C00007EE7E1 /* XMPPvCardTempAdrTypes.m in Sources */,
 				290E89F41F010C00007EE7E1 /* XMPPJabberRPCModule.m in Sources */,
 				292A66E11F0B454300598707 /* FMDatabase.m in Sources */,
+				29C30BF91F204AF700B417D7 /* ChatHelper.m in Sources */,
 				29E7DDDF1F0B7EE30005D7CE /* MyCollectionViewController.m in Sources */,
 				292A66AF1F0B454300598707 /* Reachability.m in Sources */,
 				292A66F01F0B454300598707 /* MLEmojiLabel.m in Sources */,
@@ -4089,8 +4095,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: hui wang (Q3U4VPUA5C)";
-				DEVELOPMENT_TEAM = V2MY973K7T;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yan Ping Tan (6M4WN3TR76)";
+				DEVELOPMENT_TEAM = QK43273F55;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -4106,8 +4112,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.intelcent.whim;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "856ae3d7-b2ce-4a72-93f8-eef90940e4d9";
-				PROVISIONING_PROFILE_SPECIFIER = whIntelcent_dev;
+				PROVISIONING_PROFILE = "be164f77-6423-4a80-9aff-2088435557c0";
+				PROVISIONING_PROFILE_SPECIFIER = XBIntelcent;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;

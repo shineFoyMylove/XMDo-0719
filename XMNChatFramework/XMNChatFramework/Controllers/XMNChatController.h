@@ -45,5 +45,13 @@
 -(void)setupChatOtherItemsDefault;
 
 
+#pragma mark - Menu Item Action
+
+- (void)menuCopy:(id)sender;   /**<cell menu操作*/
+
+- (void)menuDelete:(id)sender;
+
+-(void)menuPaste:(id)sender;
+
 
 @end

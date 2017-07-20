@@ -78,6 +78,7 @@
     [[XMPPTool shareXMPPTool].roster fetchRoster];
 }
 
+
 -(void)dealloc{
     Release(_data);
     Release(_sectionHeaders);
@@ -174,6 +175,11 @@
     [super viewWillAppear:animated];
     
     [self enableOpenLeftDrawer:YES];   //打开抽屉手势
+    
+    [super viewWillAppear:animated];
+    if (TmpNewUsers.count == 0) {
+        [self loadXmppFetContacts];
+    }
     
 }
 

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,8 +24,8 @@
                         <rect key="frame" x="16" y="8" width="45" height="45"/>
                         <color key="backgroundColor" red="0.0039215686269999999" green="0.75686274509999996" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="45" id="FWb-Qz-KkC"/>
                             <constraint firstAttribute="width" constant="45" id="IFR-ui-bki"/>
+                            <constraint firstAttribute="width" secondItem="to0-ia-9I4" secondAttribute="height" multiplier="1:1" id="sPD-29-mNE"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -65,7 +66,6 @@
                     <constraint firstItem="gaf-5L-mE5" firstAttribute="top" secondItem="to0-ia-9I4" secondAttribute="top" id="1If-1l-8cZ"/>
                     <constraint firstItem="gaf-5L-mE5" firstAttribute="leading" secondItem="to0-ia-9I4" secondAttribute="trailing" constant="12" id="2ig-7m-MPk"/>
                     <constraint firstItem="HcB-7u-kxv" firstAttribute="centerY" secondItem="H00-Is-rnX" secondAttribute="centerY" id="66k-YP-aU6"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="Nkt-aV-tPw" secondAttribute="bottom" constant="-1" id="Aar-xV-Vjs"/>
                     <constraint firstItem="zY4-fZ-XTH" firstAttribute="leading" secondItem="Nkt-aV-tPw" secondAttribute="leading" id="Aw7-uw-p8O"/>
                     <constraint firstItem="zY4-fZ-XTH" firstAttribute="trailing" secondItem="Nkt-aV-tPw" secondAttribute="trailing" id="DbT-V5-zBe"/>
                     <constraint firstItem="to0-ia-9I4" firstAttribute="top" secondItem="H00-Is-rnX" secondAttribute="top" constant="8" id="LAS-QG-gGI"/>
@@ -73,6 +73,7 @@
                     <constraint firstItem="to0-ia-9I4" firstAttribute="leading" secondItem="H00-Is-rnX" secondAttribute="leading" constant="16" id="YJh-wa-mxf"/>
                     <constraint firstItem="zY4-fZ-XTH" firstAttribute="bottom" secondItem="Nkt-aV-tPw" secondAttribute="bottom" id="aNF-wW-8dP"/>
                     <constraint firstItem="zY4-fZ-XTH" firstAttribute="top" secondItem="gaf-5L-mE5" secondAttribute="bottom" id="dwE-wW-xhR"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="zY4-fZ-XTH" secondAttribute="bottom" constant="-1" id="hKT-ta-YlD"/>
                     <constraint firstAttribute="trailingMargin" secondItem="gaf-5L-mE5" secondAttribute="trailing" constant="16" id="lKH-g2-boj"/>
                     <constraint firstItem="HcB-7u-kxv" firstAttribute="leading" secondItem="zY4-fZ-XTH" secondAttribute="trailing" constant="16" id="nAX-4l-tZh"/>
                     <constraint firstAttribute="bottom" secondItem="zY4-fZ-XTH" secondAttribute="bottom" constant="8" id="r4b-P4-zSD"/>

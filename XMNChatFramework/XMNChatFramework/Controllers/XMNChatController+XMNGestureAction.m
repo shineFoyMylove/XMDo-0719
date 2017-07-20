@@ -19,13 +19,13 @@
 
 - (BOOL)canBecomeFirstResponder{
     
-    return NO;
+    return YES;
 }
 
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
     
-    return NO;
-    if (action == @selector(test:) || action == @selector(copy:) || action == @selector(paste:)) {
+//    return NO;
+    if (action == @selector(test:) || action == @selector(copy:) || action == @selector(paste:) || action == @selector(delete:)) {
         return YES;
     }
     return NO;
@@ -35,9 +35,8 @@
 
 - (void)setupMenuItems {
     
-    UIMenuItem *testMenuItem = [[UIMenuItem alloc] initWithTitle:@"测试1" action:@selector(test:)];
-    UIMenuItem *testMenuIte2= [[UIMenuItem alloc] initWithTitle:@"测试2" action:@selector(test:)];
-    [[UIMenuController sharedMenuController] setMenuItems: @[testMenuItem,testMenuIte2]];
+//    UIMenuItem *testMenuItem = [[UIMenuItem alloc] initWithTitle:@"测试1" action:@selector(test:)];
+    
     [[UIMenuController sharedMenuController] setArrowDirection:UIMenuControllerArrowDown];
     [[UIMenuController sharedMenuController] update];
 }
@@ -64,8 +63,9 @@
 - (void)handleTapAction:(UITapGestureRecognizer *)tap {
     
     XMNLog(@"this is view tap ");
-
     [self cleanMenu];
+    
+    
     if (tap.state == UIGestureRecognizerStateEnded) {
         CGPoint point = [tap locationInView:self.tableView];
         NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:point];
@@ -122,16 +122,22 @@
                 
                 CGRect rect = [self.tableView convertRect:cell.frame toView:self.view];
                 /** 需要另外加上tabBar高度 保证menuController 可以完整显示*/
-                if (rect.origin.y <= (45 + (self.navigationController.navigationBar.isHidden ? 0 : 64))) {
-                    [[UIMenuController sharedMenuController] setArrowDirection:UIMenuControllerArrowUp];
-                    [[UIMenuController sharedMenuController] setTargetRect:[cell.contentView convertRect:cell.messageContentView.frame toView:self.tableView] inView:self.tableView];
-                    [[UIMenuController sharedMenuController] setMenuVisible:YES animated:YES];
-                }else {
-                    [[UIMenuController sharedMenuController] setArrowDirection:UIMenuControllerArrowDown];
-                    [[UIMenuController sharedMenuController] setTargetRect:[cell.contentView convertRect:cell.messageContentView.frame toView:self.tableView] inView:self.tableView];
-                    [[UIMenuController sharedMenuController] setMenuVisible:YES animated:YES];
-                }
                 
+                UIMenuController *menuContr = [UIMenuController sharedMenuController];
+                [self becomeFirstResponder];
+                
+                if (rect.origin.y <= (45 + (self.navigationController.navigationBar.isHidden ? 0 : 64))) {
+                    [menuContr setArrowDirection:UIMenuControllerArrowUp];
+                    [menuContr setTargetRect:[cell.contentView convertRect:cell.messageContentView.frame toView:self.tableView] inView:self.tableView];
+                    [menuContr setMenuVisible:YES animated:YES];
+                }else {
+                    [menuContr setArrowDirection:UIMenuControllerArrowDown];
+                    
+                    CGRect rect = [cell.contentView convertRect:cell.messageContentView.frame toView:self.tableView];
+                    
+                    [menuContr setTargetRect:[cell.contentView convertRect:cell.messageContentView.frame toView:self.tableView] inView:self.tableView];
+                    [menuContr setMenuVisible:YES animated:YES];
+                }
 
             }
         }
@@ -142,6 +148,7 @@
     }
 }
 
+
 - (void)cleanMenu {
     
     self.tableView.scrollEnabled = YES;
@@ -151,12 +158,23 @@
     [[self.tableView visibleCells] enumerateObjectsUsingBlock:^(__kindof UITableViewCell * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [obj setSelected:NO];
     }];
+    
+    [self resignFirstResponder]; //
 }
 
 #pragma mark - Menu Item Action
 
 - (void)copy:(id)sender {
     
+    NSLog(@"%@",sender);
+}
+
+- (void)delete:(id)sender{
+    NSLog(@"%@",sender);
+}
+
+-(void)paste:(id)sender{
+    NSLog(@"%@",sender);
 }
 
 - (void)test:(UIMenuController *)sender {

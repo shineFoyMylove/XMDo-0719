@@ -35,7 +35,7 @@
     
     if (self = [super init]) {
         
-        _chatVM = [[XMNChatViewModel alloc] initWithChatMode:aChatMode];
+//        _chatVM = [[XMNChatViewModel alloc] initWithChatMode:aChatMode];
     }
     return self;
 }
@@ -216,11 +216,14 @@
 - (void)scrollBottom:(BOOL)animated {
     
     if (self.chatVM.messages.count >= 1) {
-        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:MAX(0, self.chatVM.messages.count - 1) inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:animated];
+//        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:MAX(0, self.chatVM.messages.count - 1) inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:animated];
+        
+        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:MAX(0, self.chatVM.messages.count-1) inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:animated];
     }
 }
 
 - (void)tableViewReload{
+    
     [self.tableView reloadData];
     [self scrollBottom:NO];
 }

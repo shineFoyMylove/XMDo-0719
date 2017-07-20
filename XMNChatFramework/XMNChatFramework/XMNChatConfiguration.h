@@ -138,7 +138,7 @@ typedef NS_ENUM(NSUInteger, XMNMessageState) {
     /** 消息成功 */
     XMNMessageStateSuccess = 20,
     /** 消息失败 */
-    XMNMessageStateFailed,
+    XMNMessageStateFailed = 30,
 };
 
 typedef NS_ENUM(NSUInteger, XMNMessageSubState) {

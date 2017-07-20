@@ -65,7 +65,15 @@
 #pragma mark - 实例方法 -- 增、删、改操作
 
 +(instancetype)NewMessage{
-    ChatMessage *msgItem  = [[ChatMessage alloc] initWithContext:[CoreDataManager instance].managedObjectContext];
+    ChatMessage *msgItem = [ChatMessage alloc];
+    if ([msgItem respondsToSelector:@selector(initWithContext:)]) {
+        msgItem = [msgItem initWithContext:[CoreDataManager instance].managedObjectContext];
+    }else{
+        msgItem = [msgItem initWithEntity:[ChatMessage entityDescription] insertIntoManagedObjectContext:[CoreDataManager instance].managedObjectContext];
+    }
+    
+//    ChatMessage *msgItem  = [[ChatMessage alloc] initWithContext:[CoreDataManager instance].managedObjectContext];
+    
     return  msgItem;
 }
 

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		293138011F10D7160048C10A /* XMNChatOtherItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 293137FF1F10D7160048C10A /* XMNChatOtherItem.m */; };
 		293138021F10D9070048C10A /* XMNChatOtherItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 293137FE1F10D7160048C10A /* XMNChatOtherItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29C30C001F2098F100B417D7 /* XMNChatOtherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29C30BFF1F2098F100B417D7 /* XMNChatOtherCell.xib */; };
 		971F9A381D18EBE50053F083 /* XMNChatSystemCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 971F9A361D18EBE50053F083 /* XMNChatSystemCell.h */; };
 		971F9A391D18EBE50053F083 /* XMNChatSystemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 971F9A371D18EBE50053F083 /* XMNChatSystemCell.m */; };
 		971F9A3B1D18EC3F0053F083 /* XMNChatSystemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 971F9A3A1D18EC3F0053F083 /* XMNChatSystemCell.xib */; };
@@ -85,7 +86,6 @@
 		9762B2CF1CD0A98900A050D4 /* XMNChatOwnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9762B2CE1CD0A98900A050D4 /* XMNChatOwnCell.xib */; };
 		9762B2D81CD0ABFD00A050D4 /* XMNChatStateView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9762B2D61CD0ABFD00A050D4 /* XMNChatStateView.h */; };
 		9762B2D91CD0ABFD00A050D4 /* XMNChatStateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9762B2D71CD0ABFD00A050D4 /* XMNChatStateView.m */; };
-		9762B2DB1CD0B6E000A050D4 /* XMNChatOtherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9762B2DA1CD0B6E000A050D4 /* XMNChatOtherCell.xib */; };
 		9762B2DD1CD0C86300A050D4 /* XMNChat.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9762B2DC1CD0C86300A050D4 /* XMNChat.bundle */; };
 		976A3CB51CCF12BB00097427 /* XMNChatExpressionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 976A3CB41CCF12BB00097427 /* XMNChatExpressionView.xib */; };
 		976A3CC21CCF6EFF00097427 /* XMNChatExpressionCollectionCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 976A3CC01CCF6EFF00097427 /* XMNChatExpressionCollectionCell.h */; };
@@ -270,6 +270,7 @@
 /* Begin PBXFileReference section */
 		293137FE1F10D7160048C10A /* XMNChatOtherItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMNChatOtherItem.h; sourceTree = "<group>"; };
 		293137FF1F10D7160048C10A /* XMNChatOtherItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMNChatOtherItem.m; sourceTree = "<group>"; };
+		29C30BFF1F2098F100B417D7 /* XMNChatOtherCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XMNChatOtherCell.xib; sourceTree = "<group>"; };
 		971F9A361D18EBE50053F083 /* XMNChatSystemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMNChatSystemCell.h; sourceTree = "<group>"; };
 		971F9A371D18EBE50053F083 /* XMNChatSystemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMNChatSystemCell.m; sourceTree = "<group>"; };
 		971F9A3A1D18EC3F0053F083 /* XMNChatSystemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XMNChatSystemCell.xib; sourceTree = "<group>"; };
@@ -347,7 +348,6 @@
 		9762B2CE1CD0A98900A050D4 /* XMNChatOwnCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XMNChatOwnCell.xib; sourceTree = "<group>"; };
 		9762B2D61CD0ABFD00A050D4 /* XMNChatStateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMNChatStateView.h; sourceTree = "<group>"; };
 		9762B2D71CD0ABFD00A050D4 /* XMNChatStateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMNChatStateView.m; sourceTree = "<group>"; };
-		9762B2DA1CD0B6E000A050D4 /* XMNChatOtherCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XMNChatOtherCell.xib; sourceTree = "<group>"; };
 		9762B2DC1CD0C86300A050D4 /* XMNChat.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = XMNChat.bundle; sourceTree = "<group>"; };
 		976A3CB41CCF12BB00097427 /* XMNChatExpressionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XMNChatExpressionView.xib; sourceTree = "<group>"; };
 		976A3CC01CCF6EFF00097427 /* XMNChatExpressionCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMNChatExpressionCollectionCell.h; sourceTree = "<group>"; };
@@ -903,7 +903,7 @@
 				9750C6D51D3CDADF00780704 /* XMNChatOtherItemView.xib */,
 				976A3CC41CCF6F0E00097427 /* XMNChatExpressionCollectionCell.xib */,
 				9762B2CE1CD0A98900A050D4 /* XMNChatOwnCell.xib */,
-				9762B2DA1CD0B6E000A050D4 /* XMNChatOtherCell.xib */,
+				29C30BFF1F2098F100B417D7 /* XMNChatOtherCell.xib */,
 				971F9A3A1D18EC3F0053F083 /* XMNChatSystemCell.xib */,
 				97B7B53D1D389A3400B79D15 /* XMNChatTextMessageView.xib */,
 				973EC81E1D389BD100A70077 /* XMNChatImageMessageView.xib */,
@@ -1338,7 +1338,6 @@
 				976A3CC51CCF6F0E00097427 /* XMNChatExpressionCollectionCell.xib in Resources */,
 				9762B2DD1CD0C86300A050D4 /* XMNChat.bundle in Resources */,
 				97C1A3541CCE051F000E546C /* XMNChatBar.xcassets in Resources */,
-				9762B2DB1CD0B6E000A050D4 /* XMNChatOtherCell.xib in Resources */,
 				9739AF541D3DD6A0006CC994 /* XMNPhotoPickerSheet.xib in Resources */,
 				9739AF411D3DD6A0006CC994 /* bottom_bar_origin_normal@2x.png in Resources */,
 				9739AF401D3DD6A0006CC994 /* bottom_bar_number_background@2x.png in Resources */,
@@ -1364,6 +1363,7 @@
 				9739AF511D3DD6A0006CC994 /* XMNBottomBar.xib in Resources */,
 				9750C6D41D3CD70E00780704 /* XMNChatOtherView.xib in Resources */,
 				976A3CB51CCF12BB00097427 /* XMNChatExpressionView.xib in Resources */,
+				29C30C001F2098F100B417D7 /* XMNChatOtherCell.xib in Resources */,
 				97B7B53E1D389A3400B79D15 /* XMNChatTextMessageView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

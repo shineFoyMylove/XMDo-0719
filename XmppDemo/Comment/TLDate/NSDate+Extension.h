@@ -103,5 +103,9 @@
  获取当前时间戳 */
 +(double)timeInterval;
 
+/**
+ 时间戳转 日期字符(默认format)*/
++(NSString *)dateNormalStringWithTime:(NSTimeInterval)timeInterval;
+
 
 @end

@@ -240,6 +240,20 @@ static ToolMethods *shareInstance;
     [tmpAlert show];
 }
 
+/**<计算某个方法耗时 */
++(void)calculateUsedTime:(void(^)())action{
+    
+    CFAbsoluteTime start = CFAbsoluteTimeGetCurrent();
+    if (action) {
+        action();
+    }
+    CFAbsoluteTime end = CFAbsoluteTimeGetCurrent();
+    
+    NSLog(@"方法耗时: %f",end-start);
+    
+    
+}
+
 #pragma mark 获取随机字符串
 +(NSString *)randomStringLength:(int)length{
     

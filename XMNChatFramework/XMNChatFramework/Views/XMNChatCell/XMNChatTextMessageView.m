@@ -32,7 +32,7 @@
     self.textLabel.autoresizingMask = UIViewAutoresizingNone;
     //    self.textLabel.displaysAsynchronously = YES;
     self.textLabel.textAlignment = NSTextAlignmentLeft;
-    self.textLabel.font = [UIFont systemFontOfSize:14.f];
+    self.textLabel.font = [UIFont systemFontOfSize:15.f];
     
     //设置textView 解析表情 解析link
     XMNChatTextParser *parser = [[XMNChatTextParser alloc] init];
@@ -41,6 +41,7 @@
     parser.alignFont = [UIFont systemFontOfSize:14.f];
     parser.parseLinkEnabled = YES;
     self.textLabel.textParser = parser;
+    
     
     //设置textView 固定行高
     YYTextLinePositionSimpleModifier *mod = [YYTextLinePositionSimpleModifier new];
@@ -52,8 +53,14 @@
 
 - (void)setupViewWithMessage:(XMNChatBaseMessage *)aMessage {
     
+//    if (aMessage.owner = XMNMessageOwnerSelf) {
+//        self.textLabel.textAlignment = NSTextAlignmentLeft;
+//    }else{
+//        self.textLabel.textAlignment = NSTextAlignmentRight;
+//    }
+    
     //设置显示的文本内容
-    //    self.textLabel.text = aMessage.content;
+    self.textLabel.text = aMessage.content;
     
     //计算aMessage.content 所需要的高度
     NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:aMessage.content];
@@ -63,12 +70,21 @@
     
     one.yy_font = self.textLabel.font;
     
-    YYTextContainer *container = [YYTextContainer containerWithSize:CGSizeMake(kXMNMessageViewMaxWidth - 36, CGFLOAT_MAX)];
+    YYTextContainer *container = [YYTextContainer containerWithSize:CGSizeMake(kXMNMessageViewMaxWidth - 36, CGFLOAT_MAX)];  //36
     container.linePositionModifier = self.textLabel.linePositionModifier;
     
     YYTextLayout *layout = [YYTextLayout layoutWithContainer:container text:one];
     self.textLabel.textLayout = layout;
-    self.contentSize  = CGSizeMake(MIN(MIN(layout.textBoundingSize.width + 36, kXMNMessageViewMaxWidth), self.textLabel.textLayout.textBoundingSize.width + 36), layout.rowCount * [(YYTextLinePositionSimpleModifier *)self.textLabel.linePositionModifier fixedLineHeight] );
+    
+    CGFloat textMin = self.textLabel.textLayout.textBoundingSize.width +36;
+    if (textMin < 60) {
+        textMin = 60;
+    }
+    self.contentSize  = CGSizeMake(MIN(MIN(textMin, kXMNMessageViewMaxWidth), textMin), layout.rowCount * [(YYTextLinePositionSimpleModifier *)self.textLabel.linePositionModifier fixedLineHeight] );
+    
+    
+    
+//    self.contentSize  = CGSizeMake(MIN(MIN(layout.textBoundingSize.width + 36, kXMNMessageViewMaxWidth), self.textLabel.textLayout.textBoundingSize.width + 36), layout.rowCount * [(YYTextLinePositionSimpleModifier *)self.textLabel.linePositionModifier fixedLineHeight] );  
     /// 2. 添加高亮点击事件
     
     //    [one yy_setTextHighlightRange:one.yy_rangeOfAll

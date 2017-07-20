@@ -59,11 +59,18 @@ static CoreDataManager *shareInstance;
     if (_PersistentStoreCoordinator != nil) {
         return _PersistentStoreCoordinator;
     }
+    
+    //选项， CoreData数据迁移
+    NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
+                             [NSNumber numberWithBool:YES],NSMigratePersistentStoresAutomaticallyOption,
+                             [NSNumber numberWithBool:YES],NSInferMappingModelAutomaticallyOption, nil];
+//    NSDictionary *options = nil;  //系统生成 此处为nil
+    
     // 持久化存储调度器
     _PersistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
     
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.sqlite",ManagedObjectModelFileName]];
-    NSDictionary *options = nil;
+    
     
     //添加持久化存储
     NSError *error = nil;

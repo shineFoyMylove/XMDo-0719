@@ -395,8 +395,16 @@
 /**
  获取当前时间戳 */
 +(double)timeInterval{
-    return [[NSDate date] timeIntervalSinceNow];
+    return [[NSDate date] timeIntervalSince1970];
 }
 
+
+/**
+ 时间戳转 日期字符(默认format)*/
++(NSString *)dateNormalStringWithTime:(NSTimeInterval)timeInterval{
+    NSDate *tmpDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
+    NSString *dateStr = [tmpDate dateStringNormal];
+    return dateStr;
+}
 
 @end
