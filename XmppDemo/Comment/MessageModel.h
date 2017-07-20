@@ -101,7 +101,7 @@ typedef NS_ENUM(NSUInteger, IMChatType) {
 -(NSDictionary *)jsonDic;
 
 //图片缩放
--(void)scalingToSize:(CGSize)size withImage:(UIImage *)image;
+-(void)setImageSizeWithImage:(UIImage *)image;
 
 @end
 

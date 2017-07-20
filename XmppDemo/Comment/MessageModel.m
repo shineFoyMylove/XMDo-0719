@@ -95,11 +95,12 @@
     return dict;
 }
 
--(void)scalingToSize:(CGSize)size withImage:(UIImage *)image{
-    UIImage *resultImg = [image scalingToSize:size];
-    self.width = [NSString stringWithFormat:@"%.2f",resultImg.size.width];
-    self.height = [NSString stringWithFormat:@"%.2f",resultImg.size.height];
+    // 400 - 250
+-(void)setImageSizeWithImage:(UIImage *)image{
+    self.width = [NSString stringWithFormat:@"%.2f",image.size.width];
+    self.height = [NSString stringWithFormat:@"%.2f",image.size.height];
 }
+
 
 @end
 

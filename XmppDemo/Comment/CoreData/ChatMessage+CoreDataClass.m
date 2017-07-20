@@ -16,7 +16,6 @@
         
         NSString *userphone = UDGetString(username_preference);
         if (userphone.length >0 && [model.from.phone isEqualToString:userphone]) {
-            self.isFromOwn = YES;
             self.conversationId = model.to.phone;  //你 -> 对方
         }else{
             self.conversationId = model.from.phone;  //对方 -> 你
@@ -59,7 +58,16 @@
 //        self.timeInterval = model.time.doubleValue;
         self.timeInterval = [NSDate timeInterval];
     }
-    
+}
+
+-(BOOL)isFromOwn{
+    NSString *userphone = UDGetString(username_preference);
+    if (userphone.length >0 && [self.from_phone isEqualToString:userphone]) {
+        _isFromOwn = YES;
+    }else{
+        _isFromOwn = NO;
+    }
+    return  _isFromOwn;
 }
 
 @end

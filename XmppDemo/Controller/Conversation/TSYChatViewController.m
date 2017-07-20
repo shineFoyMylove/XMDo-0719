@@ -14,6 +14,8 @@
 
 #import "ChatMessage+CoreDataClass.h"
 #import "ChatConversation+CoreDataClass.h"
+#import "UIImage+Resize.h"
+
 
 @interface TSYChatViewController ()
 {
@@ -88,7 +90,12 @@
         
         XMNChatBaseMessage *baseMsg = nil;
         XMNMessageOwner owner = chatMsg.isFromOwn?XMNMessageOwnerSelf:XMNMessageOwnerOther;
+        
         XMNMessageState msgState = chatMsg.sendState == XMNMessageStateSuccess?XMNMessageStateSuccess:XMNMessageStateFailed;
+        if (owner == XMNMessageOwnerOther) {
+            msgState = XMNMessageStateSuccess;
+        }
+        
         switch (chatMsg.msgType) {
             case IMMessgeTypeText:
             {
@@ -100,6 +107,7 @@
             case IMMessgeTypeImage:
             {
                 XMNChatImageMessage *imgMsg = [[XMNChatImageMessage alloc] initWithContent:chatMsg.img_url state:(msgState) owner:owner];
+                imgMsg.imageSize = CGSizeMake(chatMsg.img_width/2, chatMsg.img_height/2);
                 baseMsg = (XMNChatBaseMessage *)imgMsg;
             }
                 break;
@@ -235,6 +243,9 @@
         [imagePicker.rac_imageSelectedSignal subscribeNext:^(id x) {
             [imagePicker dismissViewControllerAnimated:YES completion:^{
                 UIImage *image = [x objectForKey:UIImagePickerControllerOriginalImage];
+                
+                image = [image resizeImageGreaterThan:1136];  //小图 resize
+                
                 [weakSelf sendMsgRequeset:(id)image type:(XMNMessageTypeImage)];
             }];
         } completed:^{
@@ -262,6 +273,7 @@
         [imagePicker.rac_imageSelectedSignal subscribeNext:^(id x) {
             [imagePicker dismissViewControllerAnimated:YES completion:^{
                 UIImage *image = [x objectForKey:UIImagePickerControllerOriginalImage];
+                image = [image resizeImageGreaterThan:1136];  // resize
                 [weakSelf sendMsgRequeset:(id)image type:(XMNMessageTypeImage)];
             }];
         } completed:^{
@@ -395,7 +407,8 @@
         XMNChatSystemMessage *sysMsg = [[XMNChatSystemMessage alloc] initWithContent:dateStr state:(XMNMessageStateSuccess) owner:(XMNMessageOwnerSystem)];
         
         NSInteger count = self.chatVM.messages.count;
-        [self.chatVM.messages insertObject:sysMsg atIndex:count-1]; //倒数第二
+        [self.chatVM.messages insertObject:sysMsg atIndex:MAX(0, (count-1))]; //倒数第二
+        [self tableViewReload];
     }
     
     [messageItem updateWithMessageModel:sendModel];
@@ -421,8 +434,8 @@
                 
                     //消息Item (发送后台)
                 __block CTImageItem *imgItem = [[CTImageItem alloc] init];
-                [imgItem scalingToSize:CGSizeMake(320, 200) withImage:obj];
-                
+                [imgItem setImageSizeWithImage:obj];
+
                 WkSelf(weakSelf);
                 __block XMNChatImageMessage *weakMsg = imgMessage;
                 [HttpRequest im_userUploadFile:obj fileType:@"image" progress:^(int64_t bytesProgress, int64_t totalBytesProgress) {
@@ -513,6 +526,7 @@
             {
                 
                 XMNChatImageMessage *imgMsg = [[XMNChatImageMessage alloc] initWithContent:msgObj.image.url state:(XMNMessageStateSuccess) owner:(XMNMessageOwnerOther)];
+                imgMsg.imageSize = CGSizeMake([msgObj.image.width floatValue]/2, [msgObj.image.height floatValue]/2);
                 [self.chatVM.messages addObject:imgMsg];
             }
                 break;
@@ -536,12 +550,12 @@
         
         [self tableViewReload];
         
-        //接收到的信息save
-        ChatMessage *chatMsg = [ChatMessage NewMessage];
-        [chatMsg updateWithMessageModel:msgObj];
-        if (![chatMsg insert]) {
-            NSLog(@"消息记录 - 存储失败");
-        }
+//        //接收到的信息save
+//        ChatMessage *chatMsg = [ChatMessage NewMessage];
+//        [chatMsg updateWithMessageModel:msgObj];
+//        if (![chatMsg insert]) {
+//            NSLog(@"消息记录 - 存储失败");
+//        }
     }
 }
 

@@ -90,9 +90,10 @@
 
 - (void)layoutSubviews {
     
-    [super layoutSubviews];
     [self.imageView sizeToFit];
     self.imageView.center = self.contentView.center;
+    
+    [super layoutSubviews];
 }
 
 - (void)prepareForReuse {

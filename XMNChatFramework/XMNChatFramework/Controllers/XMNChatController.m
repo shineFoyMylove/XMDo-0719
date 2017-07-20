@@ -216,9 +216,7 @@
 - (void)scrollBottom:(BOOL)animated {
     
     if (self.chatVM.messages.count >= 1) {
-//        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:MAX(0, self.chatVM.messages.count - 1) inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:animated];
-        
-        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:MAX(0, self.chatVM.messages.count-1) inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:animated];
+        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:MAX(0, self.chatVM.messages.count - 1) inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:animated];
     }
 }
 

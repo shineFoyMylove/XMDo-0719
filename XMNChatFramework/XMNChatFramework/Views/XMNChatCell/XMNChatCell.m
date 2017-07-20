@@ -32,12 +32,14 @@
 
 #pragma mark - Override Methods
 
-//- (void)layoutSubviews {
-//
-////    self.messageContentView.maskView.frame = self.messageContentView.bounds;
-//    [super layoutSubviews];
-//    
-//}
+- (void)layoutSubviews {
+
+#warning 开放 layoutSubviews
+    
+//    self.messageContentView.maskView.frame = self.messageContentView.bounds;
+    [super layoutSubviews];
+    
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     

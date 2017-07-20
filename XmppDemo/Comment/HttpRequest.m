@@ -349,7 +349,6 @@ static HttpRequest *instance;
         fileData = UIImageJPEGRepresentation(fileObj, 0.7);
         
         //文件名
-        
         fileName = [NSString stringWithFormat:@"%@.jpg", dataStr];
         
         //mimeType

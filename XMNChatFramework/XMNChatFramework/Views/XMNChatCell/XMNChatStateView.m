@@ -27,6 +27,8 @@
 - (void)layoutSubviews {
     
     self.imageView.frame = self.indicatorView.frame = self.bounds;
+    
+    [super layoutSubviews];
 }
 
 #pragma mark - Methods

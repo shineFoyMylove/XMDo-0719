@@ -456,6 +456,7 @@
 		E38B2EFC1F1F921400479151 /* ContactDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E38B2EF41F1F921400479151 /* ContactDetailCell.xib */; };
 		E39769FF1F1E5251007B954B /* NewFriendObject+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E39769FC1F1E5251007B954B /* NewFriendObject+CoreDataClass.m */; };
 		E3976A001F1E5251007B954B /* NewFriendObject+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E39769FE1F1E5251007B954B /* NewFriendObject+CoreDataProperties.m */; };
+		E3A7E1841F20DEFE0043645A /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A7E1831F20DEFE0043645A /* UIImage+Resize.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -1304,6 +1305,8 @@
 		E39769FC1F1E5251007B954B /* NewFriendObject+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NewFriendObject+CoreDataClass.m"; sourceTree = "<group>"; };
 		E39769FD1F1E5251007B954B /* NewFriendObject+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NewFriendObject+CoreDataProperties.h"; sourceTree = "<group>"; };
 		E39769FE1F1E5251007B954B /* NewFriendObject+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NewFriendObject+CoreDataProperties.m"; sourceTree = "<group>"; };
+		E3A7E1821F20DEFE0043645A /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		E3A7E1831F20DEFE0043645A /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2769,6 +2772,8 @@
 				2921380B1F0CB8A900C663BB /* UIImage+Color.m */,
 				2921380C1F0CB8A900C663BB /* UIImage+Size.h */,
 				2921380D1F0CB8A900C663BB /* UIImage+Size.m */,
+				E3A7E1821F20DEFE0043645A /* UIImage+Resize.h */,
+				E3A7E1831F20DEFE0043645A /* UIImage+Resize.m */,
 				292138391F0CDC0E00C663BB /* UINavigationController+StackManager.h */,
 				2921383A1F0CDC0E00C663BB /* UINavigationController+StackManager.m */,
 			);
@@ -3445,7 +3450,7 @@
 				TargetAttributes = {
 					2964363F1EFE380800EFC059 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = QK43273F55;
+						DevelopmentTeam = V2MY973K7T;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -3862,6 +3867,7 @@
 				292137DC1F0C8EE400C663BB /* TLInfo.m in Sources */,
 				290E89F11F010C00007EE7E1 /* XMPPSystemInputActivityMonitor.m in Sources */,
 				290E89D91F010C00007EE7E1 /* NSXMLElement+XMPP.m in Sources */,
+				E3A7E1841F20DEFE0043645A /* UIImage+Resize.m in Sources */,
 				292A66D81F0B454300598707 /* UIImage+GIF.m in Sources */,
 				29E7DE211F0B91A10005D7CE /* SDTimeLineCellOperationMenu.m in Sources */,
 				292A66D91F0B454300598707 /* UIImage+MultiFormat.m in Sources */,
@@ -4095,8 +4101,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yan Ping Tan (6M4WN3TR76)";
-				DEVELOPMENT_TEAM = QK43273F55;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: hui wang (Q3U4VPUA5C)";
+				DEVELOPMENT_TEAM = V2MY973K7T;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -4112,8 +4118,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.intelcent.whim;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "be164f77-6423-4a80-9aff-2088435557c0";
-				PROVISIONING_PROFILE_SPECIFIER = XBIntelcent;
+				PROVISIONING_PROFILE = "856ae3d7-b2ce-4a72-93f8-eef90940e4d9";
+				PROVISIONING_PROFILE_SPECIFIER = whIntelcent_dev;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -4124,7 +4130,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = V2MY973K7T;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
@@ -4146,8 +4152,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.intelcent.whim;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "856ae3d7-b2ce-4a72-93f8-eef90940e4d9";
-				PROVISIONING_PROFILE_SPECIFIER = whIntelcent_dev;
+				PROVISIONING_PROFILE = "9a91530e-68ea-4f14-be6e-01e499e712db";
+				PROVISIONING_PROFILE_SPECIFIER = "whim-adHoc";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

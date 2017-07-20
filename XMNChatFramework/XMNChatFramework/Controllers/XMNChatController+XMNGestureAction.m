@@ -71,6 +71,10 @@
         NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:point];
         if (indexPath) {
             XMNChatCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+            
+            if (!cell.messageContentView) {
+                return;
+            }
             if (CGRectContainsPoint(cell.messageContentView.frame, [tap locationInView:cell])) {
                 if (cell.delegate && [cell.delegate respondsToSelector:@selector(messageCellDidTapContent:)]) {
                     [cell.delegate messageCellDidTapContent:cell];

@@ -81,8 +81,10 @@ typedef NS_ENUM(NSUInteger, XMNPhotoPickerSendState) {
 
 - (void)layoutSubviews {
     
-    [super layoutSubviews];
+     [super layoutSubviews];
+    
     self.imageView.frame = self.contentView.bounds;
+    
 }
 
 - (void)prepareForReuse {

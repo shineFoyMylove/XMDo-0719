@@ -145,10 +145,9 @@
     }
 }
 
+static NSTimer *_timer = nil;
     //延迟执行 select ，若多次触发，不断时间重置
 -(void)setSelection:(SEL)select withInfo:(id)info delay:(CGFloat)delayTime{
-    
-    static NSTimer *_timer = nil;
     
     if(_timer){
         [_timer invalidate];
@@ -167,6 +166,8 @@
 -(void)compliteAddFriendWithUsers:(id)info{
     
     [_friendHelper addFriendWithUser:TmpNewUsers];  //添加
+    
+    _timer = nil;
 }
 
 
