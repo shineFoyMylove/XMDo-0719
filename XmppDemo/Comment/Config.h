@@ -50,8 +50,8 @@
 
 
 /*****  App 接口 域名 ip */
-#define domain_url  @"http://122.9.17.208:8080"
-#define domain_ip       @"122.9.17.208"
+#define domain_url  @"http://172.247.143.208:8080"
+#define domain_ip       @"172.247.143.208"
 
 //#define AppMainColor    RGBColor(232, 125, 26)       //橙
 #define AppMainColor    RGBColor(50,45,52)

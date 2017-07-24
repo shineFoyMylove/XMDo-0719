@@ -62,6 +62,19 @@
     [[XMPPTool shareXMPPTool].roster addDelegate:self delegateQueue:dispatch_get_main_queue()];
     [self loadXmppFetContacts];  //xmpp好友获取
     
+    [HttpRequest im_userGetFriendListComplite:^(BOOL result, NSString *errmsg, NSDictionary *jsonDic) {
+        if (jsonDic) {
+            HttpRequestStatus status = [HttpRequest requestResult:jsonDic];
+            if (status == HttpRequestStatusSucc) {
+                
+            }else{
+                
+            }
+        }else{
+            
+            [MBProgressHUD showError:errmsg];
+        }
+    }];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(UpdateFirendList:) name:NTIMUpdateFirendList object:nil];
     

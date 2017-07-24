@@ -104,14 +104,22 @@ static HttpRequest *instance;
 
 #pragma mark -
 
+#pragma mark 好友列表
++(void)im_userGetFriendListComplite:(void(^)(BOOL result, NSString *errmsg , NSDictionary *jsonDic))complite{
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setObject:self.user forKey:@"phone"];
+    [params setObject:@0 forKey:@"pageNum"];
+    [params setObject:@0 forKey:@"pageCount"];
+    
+    NSString *methodUrl = [NSString stringWithFormat:@"%@/friend/getFriendList",domain_url];
+    [HttpRequest sendPostSession:methodUrl params:params complite:^(BOOL result, NSString *errmsg, NSDictionary *jsonDic) {
+        if (complite) {
+            complite(result,errmsg,jsonDic);
+        }
+    }];
+}
+
 #pragma mark IM 添加好友
-
-/**
- 添加好友
-
- @param friendPhone 添加账号
- @param complite resultBlock
- */
 +(void)im_userAddFriend:(NSString *)friendPhone complite:(void(^)(BOOL result, NSString *errmsg , NSDictionary *jsonDic))complite{
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setObject:self.user forKey:@"ownerPhone"];
@@ -160,6 +168,21 @@ static HttpRequest *instance;
     [params setObject:blackPhone!=nil?blackPhone:@"" forKey:@"friendPhone"];
     
     NSString *methodUrl = [NSString stringWithFormat:@"%@/friend/removeBlack",domain_url];
+    [HttpRequest sendPostSession:methodUrl params:params complite:^(BOOL result, NSString *errmsg, NSDictionary *jsonDic) {
+        if (complite) {
+            complite(result,errmsg,jsonDic);
+        }
+    }];
+}
+
+#pragma mark new friend 新的朋友列表
++(void)im_userNewFriendListComplite:(void(^)(BOOL result, NSString *errmsg , NSDictionary *jsonDic))complite{
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setObject:self.user forKey:@"phone"];
+    [params setObject:@0 forKey:@"pageNum"];
+    [params setObject:@3 forKey:@"pageCount"];
+    
+    NSString *methodUrl = [NSString stringWithFormat:@"%@/friend/newFriendList",domain_url];
     [HttpRequest sendPostSession:methodUrl params:params complite:^(BOOL result, NSString *errmsg, NSDictionary *jsonDic) {
         if (complite) {
             complite(result,errmsg,jsonDic);
@@ -498,6 +521,22 @@ static HttpRequest *instance;
 }
 
 
+
+#pragma mark - 获取广告数据
+// @param adverType 广告类型（0:文字  1： 拨号图片 2：拨打图片）
++(void)im_adverGettingWithType:(NSInteger)adverType complite:(void(^)(BOOL result, NSString *errmsg , NSDictionary *jsonDic))complite{
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params setObject:self.user forKey:@"phone"];
+    [params setObject:@(adverType) forKey:@"type"];
+    
+    NSString *methodUrl = [NSString stringWithFormat:@"%@/adver/...",domain_url];
+    [HttpRequest sendPostSession:methodUrl params:params complite:^(BOOL result, NSString *errmsg, NSDictionary *jsonDic) {
+        if (complite) {
+            complite(result,errmsg,jsonDic);
+        }
+    }];
+}
+
 #pragma mark - ********请求方法 URLSession
 //SessionTask POST 异步请求
 +(void)sendPostSession:(NSString *)url params:(NSDictionary *)paramsDic complite:(void(^)(BOOL result, NSString *errmsg , NSDictionary *jsonDic))complite{
@@ -615,7 +654,12 @@ static HttpRequest *instance;
 + (NSString *)stringFromDictionary:(NSDictionary *)dict {
     NSMutableArray *pairs = [NSMutableArray array];
     [dict enumerateKeysAndObjectsUsingBlock:^(NSString *key, id obj, BOOL *stop) {
-        [pairs addObject:[NSString stringWithFormat:@"%@=%@", key, [obj URLEncodedString]]];
+        if ([obj isKindOfClass:[NSString class]]) {
+            [pairs addObject:[NSString stringWithFormat:@"%@=%@", key, [obj URLEncodedString]]];
+        }else{
+            [pairs addObject:[NSString stringWithFormat:@"%@=%@", key, obj]];
+        }
+        
     }];
     NSString *str = [pairs componentsJoinedByString:@"&"];
     if(!str)    str = @"";

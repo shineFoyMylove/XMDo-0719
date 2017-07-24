@@ -44,21 +44,29 @@ typedef NS_ENUM(NSUInteger,HttpRequestStatus) {
 #pragma mark - IM 操作
 
 /**
- * IM 添加好友 
- */
+ *IM - friend 好友列表 */
++(void)im_userGetFriendListComplite:(void(^)(BOOL result, NSString *errmsg , NSDictionary *jsonDic))complite;
+
+/**
+ * IM - friend 添加好友 */
 +(void)im_userAddFriend:(NSString *)friendPhone complite:(void(^)(BOOL result, NSString *errmsg , NSDictionary *jsonDic))complite;
 
 /**
- * IM 解除好友关系 */
+ * IM - friend 解除好友关系 */
 +(void)im_userRemoveFriend:(NSString *)friendPhone complite:(void(^)(BOOL result, NSString *errmsg , NSDictionary *jsonDic))complite;
 
 /**
- * IM 加入黑名单 */
+ * IM - friend 加入黑名单 */
 +(void)im_userInBlack:(NSString *)blackPhone complite:(void(^)(BOOL result, NSString *errmsg , NSDictionary *jsonDic))complite;
 
 /**
- * IM 移除黑名单 */
+ * IM - friend 移除黑名单 */
 +(void)im_userRemoveBlack:(NSString *)blackPhone complite:(void(^)(BOOL result, NSString *errmsg , NSDictionary *jsonDic))complite;
+
+/**
+ * IM - friend 新的朋友列表 */
++(void)im_userNewFriendListComplite:(void(^)(BOOL result, NSString *errmsg , NSDictionary *jsonDic))complite;
+
 
 /**
  * IM 发送文字消息 */
@@ -83,6 +91,8 @@ typedef NS_ENUM(NSUInteger,HttpRequestStatus) {
                 fileType:(NSString *)type
                 progress:(void(^)(int64_t bytesProgress,int64_t totalBytesProgress))progressBlock
                 complite:(void(^)(BOOL result, NSString *errmsg , NSDictionary *jsonDic))complite;
+
+
 
 
 #pragma mark - 群组
@@ -136,6 +146,14 @@ typedef NS_ENUM(NSUInteger,HttpRequestStatus) {
  */
 +(void)im_groupUpdateGroupData:(NSString *)groupId groupName:(NSString *)groupName groupDesc:(NSString *)desc maxMember:(NSInteger)maxMembeCount complite:(void(^)(BOOL result, NSString *errmsg , NSDictionary *jsonDic))complite;
 
+
+#pragma mark - 广告
+
+/**
+ 获取广告数据
+ @param adverType 广告类型（0:文字  1： 拨号图片 2：拨打图片）
+ */
++(void)im_adverGettingWithType:(NSInteger)adverType complite:(void(^)(BOOL result, NSString *errmsg , NSDictionary *jsonDic))complite;
 
 
 

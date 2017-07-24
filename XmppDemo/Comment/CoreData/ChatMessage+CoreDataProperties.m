@@ -18,6 +18,7 @@
 @dynamic conversationId;
 @dynamic userphone;
 @dynamic messageID;
+@dynamic sendState;
 
 @dynamic from_name;
 @dynamic from_phone;

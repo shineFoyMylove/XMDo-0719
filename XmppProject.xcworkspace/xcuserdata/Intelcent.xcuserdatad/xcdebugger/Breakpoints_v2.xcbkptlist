@@ -132,7 +132,7 @@
                   moduleName = "XMNChat"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/IntelcentMac/Documents/wh_Code/MyObject/MyXMPP/XmppDemo-0719/XMNChatFramework/XMNChatFramework/Vendors/XMNAudio/XMNAudioPlayer/XMNAudioFileProvider.m"
-                  timestampString = "522234674.937196"
+                  timestampString = "522574147.796819"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "446"
@@ -147,7 +147,7 @@
                   moduleName = "XMNChat"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/IntelcentMac/Documents/wh_Code/MyObject/MyXMPP/XmppDemo-0719/XMNChatFramework/XMNChatFramework/Vendors/XMNAudio/XMNAudioPlayer/XMNAudioFileProvider.m"
-                  timestampString = "522234674.939867"
+                  timestampString = "522574147.798059"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "446"
@@ -482,12 +482,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XmppDemo/Controller/Conversation/TSYChatViewController.m"
-            timestampString = "522234058.281629"
+            timestampString = "522574075.368824"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "-reloadCurrentConversationMessages"
+            startingLineNumber = "258"
+            endingLineNumber = "258"
+            landmarkName = "-actionForSendPicture"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -497,13 +497,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "XMNChatFramework/XMNChatFramework/Controllers/XMNChatController.m"
-            timestampString = "522233737.519481"
+            filePath = "XmppDemo/Controller/Conversation/TSYChatViewController.m"
+            timestampString = "522574082.832794"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226"
-            landmarkName = "-tableViewReload"
+            startingLineNumber = "287"
+            endingLineNumber = "287"
+            landmarkName = "-actionForSendPictureFromCamera"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -513,14 +513,94 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "XmppDemo/Controller/Contact/TLFriendsViewController.m"
-            timestampString = "522234769.353386"
+            filePath = "XmppDemo/Controller/Conversation/TSYChatViewController.m"
+            timestampString = "522574088.384829"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "323"
+            endingLineNumber = "323"
+            landmarkName = "-actionForVideoChat"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[TSYChatViewController actionForVideoChat]"
+                  moduleName = "XmppProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/IntelcentMac/Documents/wh_Code/MyObject/MyXMPP/XmppDemo-0719/XmppDemo/Controller/Conversation/TSYChatViewController.m"
+                  timestampString = "522574147.844358"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "323"
+                  endingLineNumber = "323"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__43-[TSYChatViewController actionForVideoChat]_block_invoke"
+                  moduleName = "XmppProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/IntelcentMac/Documents/wh_Code/MyObject/MyXMPP/XmppDemo-0719/XmppDemo/Controller/Conversation/TSYChatViewController.m"
+                  timestampString = "522574147.845744"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "324"
+                  endingLineNumber = "324"
+                  offsetFromSymbolStart = "54">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "XmppDemo/Controller/Conversation/TSYChatViewController.m"
+            timestampString = "522574125.395546"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "334"
+            endingLineNumber = "334"
+            landmarkName = "-actionForAudioChat"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[TSYChatViewController actionForAudioChat]"
+                  moduleName = "XmppProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/IntelcentMac/Documents/wh_Code/MyObject/MyXMPP/XmppDemo-0719/XmppDemo/Controller/Conversation/TSYChatViewController.m"
+                  timestampString = "522574147.848278"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "334"
+                  endingLineNumber = "334"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__43-[TSYChatViewController actionForAudioChat]_block_invoke"
+                  moduleName = "XmppProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/IntelcentMac/Documents/wh_Code/MyObject/MyXMPP/XmppDemo-0719/XmppDemo/Controller/Conversation/TSYChatViewController.m"
+                  timestampString = "522574147.849568"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "335"
+                  endingLineNumber = "335"
+                  offsetFromSymbolStart = "54">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

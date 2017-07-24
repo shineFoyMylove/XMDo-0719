@@ -254,7 +254,7 @@
     }
     
     
-    [HttpRequest im_userAddFriend:@"20170627" complite:^(BOOL result, NSString *errmsg, NSDictionary *jsonDic) {
+    [HttpRequest im_userAddFriend:@"20170701" complite:^(BOOL result, NSString *errmsg, NSDictionary *jsonDic) {
         if (jsonDic) {
             NSLog(@"%@",jsonDic);
         }
@@ -283,7 +283,7 @@
         [UIAlertView bk_alertViewWithTitle:@"错误" message:@"相机初始化失败"];
     }
     
-    [HttpRequest im_userRemoveFriend:@"20170627" complite:^(BOOL result, NSString *errmsg, NSDictionary *jsonDic) {
+    [HttpRequest im_userRemoveFriend:@"20170701" complite:^(BOOL result, NSString *errmsg, NSDictionary *jsonDic) {
         if (jsonDic) {
             NSLog(@"%@",jsonDic);
         }
@@ -331,7 +331,11 @@
 
     //发起语音聊天
 -(void)actionForAudioChat{
-    
+    [HttpRequest im_userNewFriendListComplite:^(BOOL result, NSString *errmsg, NSDictionary *jsonDic) {
+        if (jsonDic) {
+            NSLog(@"%@",jsonDic);
+        }
+    }];
 }
 
     //发送收藏信息

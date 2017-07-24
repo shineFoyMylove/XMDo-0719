@@ -38,6 +38,20 @@
         <attribute name="voice_length" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="voice_url" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="IMFriend" representedClassName="IMFriend" syncable="YES" codeGenerationType="class">
+        <attribute name="headLargeUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="headSmallUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneCharge" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="pinyin" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sex" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="sign" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sort" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userphone" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="LocalContact" representedClassName="LocalContact" syncable="YES" codeGenerationType="class"/>
     <entity name="NewFriendObject" representedClassName="NewFriendObject" syncable="YES">
         <attribute name="imageUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -52,5 +66,7 @@
         <element name="ChatConversation" positionX="-63" positionY="135" width="128" height="135"/>
         <element name="ChatMessage" positionX="-63" positionY="-18" width="128" height="465"/>
         <element name="NewFriendObject" positionX="-63" positionY="135" width="128" height="165"/>
+        <element name="LocalContact" positionX="-63" positionY="135" width="128" height="45"/>
+        <element name="IMFriend" positionX="-54" positionY="144" width="128" height="210"/>
     </elements>
 </model>
