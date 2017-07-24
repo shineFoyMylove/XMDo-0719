@@ -121,11 +121,31 @@
             return;
         }
         
-        [[XMPPTool shareXMPPTool] xmppAgreeWithFriendRequest:_objItem.phone];
+        [HttpRequest im_userAddFriend:_objItem.phone content:@"同意添加好友" isAgred:YES complite:^(BOOL result, NSString *errmsg, NSDictionary *jsonDic) {
+            
+            if (jsonDic) {
+                NSLog(@"%@",jsonDic);
+                HttpRequestStatus status = [HttpRequest requestResult:jsonDic];
+                if (status == HttpRequestStatusSucc) {
+                    
+                    if (agreeCompliteBlock) {
+                        agreeCompliteBlock(YES);
+                    }
+                }else{
+                    errmsg = [jsonDic getStringValueForKey:@"msg" defaultValue:@"添加失败"];
+                    [MBProgressHUD showToastWithText:errmsg inView:nil];
+                }
+                
+            }else{
+                [ToolMethods showSysAlert:@"操作失败,请稍后重试"];
+            }
+            
+        }];
         
-        if (agreeCompliteBlock) {
-            agreeCompliteBlock(YES);
-        }
+//        [[XMPPTool shareXMPPTool] xmppAgreeWithFriendRequest:_objItem.phone];
+//        if (agreeCompliteBlock) {
+//            agreeCompliteBlock(YES);
+//        }
     }
 }
 

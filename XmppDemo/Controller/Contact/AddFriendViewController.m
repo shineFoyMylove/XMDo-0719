@@ -55,22 +55,48 @@
     [_accountField resignFirstResponder];
     
     WkSelf(weakSelf);
-    [[XMPPTool shareXMPPTool] xmppAddFriendSubscribe:_accountField.text complite:^(BOOL result) {
-        if (result) {
-            NewFriendObject *friendObj = [NewFriendObject NewMessage];
-            friendObj.phone = _accountField.text;
-            friendObj.state = TLNewFriendApplyStateWaiting;
-            friendObj.name  = [NSString stringWithFormat:@"测试: %@",_accountField.text];
-            
-            if ([friendObj insert]) {
-                NotificationPost(NTIMHaveNewFriend, nil);
+    [HttpRequest im_userAddFriend:@"20170701" content:@"请求添加好友" isAgred:NO complite:^(BOOL result, NSString *errmsg, NSDictionary *jsonDic) {
+        
+        if (jsonDic) {
+            NSLog(@"%@",jsonDic);
+            HttpRequestStatus status = [HttpRequest requestResult:jsonDic];
+            if (status == HttpRequestStatusSucc) {
+                NewFriendObject *friendObj = [NewFriendObject NewMessage];
+                friendObj.phone = _accountField.text;
+                friendObj.state = TLNewFriendApplyStateWaiting;
+                friendObj.name = [NSString stringWithFormat:@"%@",_accountField.text];
+                if ([friendObj insert]) {
+                    NotificationPost(NTIMHaveNewFriend, nil);
+                }
+                [MBProgressHUD showToastWithText:@"添加成功" inView:nil];
+                [weakSelf popViewControllerAnimated:YES delay:YES];
+                
+            }else{
+                errmsg = [jsonDic getStringValueForKey:@"msg" defaultValue:@"添加失败"];
+                [MBProgressHUD showToastWithText:errmsg inView:nil];
             }
-            
-            AlertTipWithMessage(@"添加成功");
-            [weakSelf popViewControllerAnimated:YES delay:YES];
+        }else{
+            [ToolMethods showSysAlert:@"操作失败"];
         }
-        NSLog(@"Complite");
     }];
+
+    
+//    [[XMPPTool shareXMPPTool] xmppAddFriendSubscribe:_accountField.text complite:^(BOOL result) {
+//        if (result) {
+//            NewFriendObject *friendObj = [NewFriendObject NewMessage];
+//            friendObj.phone = _accountField.text;
+//            friendObj.state = TLNewFriendApplyStateWaiting;
+//            friendObj.name  = [NSString stringWithFormat:@"测试: %@",_accountField.text];
+//            
+//            if ([friendObj insert]) {
+//                NotificationPost(NTIMHaveNewFriend, nil);
+//            }
+//            
+//            AlertTipWithMessage(@"添加成功");
+//            [weakSelf popViewControllerAnimated:YES delay:YES];
+//        }
+//        NSLog(@"Complite");
+//    }];
     
     
 }

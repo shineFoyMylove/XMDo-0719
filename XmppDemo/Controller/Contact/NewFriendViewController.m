@@ -60,8 +60,32 @@
         
         dispatch_async(GCDQueueMain, ^{
             [weakSelf.NewFriendList reloadData];
+            [weakSelf getOnlieNewFriendData];
         });
     });
+}
+
+    //先读取本地，再获取服务器新的好友数据
+-(void)getOnlieNewFriendData{
+    
+    WkSelf(weakSelf);
+    [HttpRequest im_userNewFriendListComplite:^(BOOL result, NSString *errmsg, NSDictionary *jsonDic) {
+        if (jsonDic) {
+            HttpRequestStatus state = [HttpRequest requestResult:jsonDic];
+            if (state == HttpRequestStatusSucc) {
+                
+                
+                
+            }else{
+                errmsg = [jsonDic getStringValueForKey:@"msg" defaultValue:@""];
+                [MBProgressHUD showToastWithText:@"数据获取失败" inView:nil];
+            }
+        }else{
+            [MBProgressHUD showToastWithText:@"请求错误" inView:nil];
+        }
+        
+        [weakSelf.NewFriendList reloadData];
+    }];
 }
 
 #pragma mark - Event Response -
@@ -125,19 +149,11 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         //删除
         NewFriendObject *obj = self.NewFriendsArray[indexPath.row];
-        NSString *phoneStr = [NSString stringWithString:obj.phone];
-        TLNewFriendApplyState statu = obj.state;
+        
         if ([obj remove]) {
-            //拒绝
-//            if (statu != TLNewFriendApplyStateAgreed) {
-                [[XMPPTool shareXMPPTool] xmppDisagreeWithFriendRequest:phoneStr];
-//            }
-            
             [self.NewFriendsArray removeObject:obj];
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:(UITableViewRowAnimationFade)];
-            
         }
-        
     }
 }
 

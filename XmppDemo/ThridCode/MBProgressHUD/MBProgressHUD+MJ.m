@@ -112,4 +112,29 @@
 {
     [self hideHUDForView:nil];
 }
+
+// 类似 Toast
++(void)showToastWithText:(NSString *)text inView:(UIView *)view{
+    if(view == nil) view = [[UIApplication sharedApplication].windows lastObject];
+    
+    MBProgressHUD *HUD = [[MBProgressHUD alloc] initWithView:view];
+    HUD.labelText = text;
+    HUD.mode = MBProgressHUDModeText;
+    HUD.alpha = 0.7;
+    [view addSubview:HUD];
+    
+    //指定距离中心点的X轴和Y轴的位置，不指定则在屏幕中间显示
+    HUD.yOffset = 100.0f;
+//    HUD.xOffset = 100.0f;
+    
+    __block MBProgressHUD *blockHUD = HUD;
+    [HUD showAnimated:YES whileExecutingBlock:^{
+        sleep(1.2);
+    } completionBlock:^{
+        [HUD removeFromSuperview];
+        blockHUD = nil;
+    }];
+}
+
+
 @end

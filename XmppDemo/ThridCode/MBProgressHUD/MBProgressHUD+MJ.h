@@ -25,4 +25,7 @@
 + (void)hideHUDForView:(UIView *)view;
 + (void)hideHUD;
 
+// 类似 Toast 提示
++(void)showToastWithText:(NSString *)text inView:(UIView *)view;
+
 @end

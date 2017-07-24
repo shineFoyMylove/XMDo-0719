@@ -172,7 +172,6 @@ static NSTimer *_timer = nil;
     
 //    _timer = [NSTimer scheduledTimerWithTimeInterval:delayTime target:self selector:select userInfo:nil repeats:NO];
     
-    
 }
 
     //最终添加

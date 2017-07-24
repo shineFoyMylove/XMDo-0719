@@ -253,12 +253,6 @@
         }];
     }
     
-    
-    [HttpRequest im_userAddFriend:@"20170701" complite:^(BOOL result, NSString *errmsg, NSDictionary *jsonDic) {
-        if (jsonDic) {
-            NSLog(@"%@",jsonDic);
-        }
-    }];
 }
 
     //调起拍摄
@@ -283,9 +277,22 @@
         [UIAlertView bk_alertViewWithTitle:@"错误" message:@"相机初始化失败"];
     }
     
+//    WkSelf(weakSelf);
     [HttpRequest im_userRemoveFriend:@"20170701" complite:^(BOOL result, NSString *errmsg, NSDictionary *jsonDic) {
         if (jsonDic) {
             NSLog(@"%@",jsonDic);
+            HttpRequestStatus status = [HttpRequest requestResult:jsonDic];
+            if (status == HttpRequestStatusSucc) {
+
+                [MBProgressHUD showToastWithText:@"删除成功" inView:nil];
+//                [weakSelf popViewControllerAnimated:YES delay:YES];
+                
+            }else{
+                errmsg = [jsonDic getStringValueForKey:@"msg" defaultValue:@"删除失败"];
+                [MBProgressHUD showToastWithText:errmsg inView:nil];
+            }
+        }else{
+            [ToolMethods showSysAlert:@"操作失败"];
         }
     }];
 }
@@ -320,9 +327,23 @@
 
     //发起视频聊天
 -(void)actionForVideoChat{
-    [HttpRequest im_userRemoveBlack:@"20170627" complite:^(BOOL result, NSString *errmsg, NSDictionary *jsonDic) {
+    
+    //    WkSelf(weakSelf);
+    [HttpRequest im_userRemoveBlack:@"20170701" complite:^(BOOL result, NSString *errmsg, NSDictionary *jsonDic) {
         if (jsonDic) {
             NSLog(@"%@",jsonDic);
+            HttpRequestStatus status = [HttpRequest requestResult:jsonDic];
+            if (status == HttpRequestStatusSucc) {
+                
+                [MBProgressHUD showToastWithText:@"移除黑名单成功" inView:nil];
+                //                [weakSelf popViewControllerAnimated:YES delay:YES];
+                
+            }else{
+                errmsg = [jsonDic getStringValueForKey:@"msg" defaultValue:@"移除失败"];
+                [MBProgressHUD showToastWithText:errmsg inView:nil];
+            }
+        }else{
+            [ToolMethods showSysAlert:@"操作失败"];
         }
     }];
     
@@ -334,6 +355,15 @@
     [HttpRequest im_userNewFriendListComplite:^(BOOL result, NSString *errmsg, NSDictionary *jsonDic) {
         if (jsonDic) {
             NSLog(@"%@",jsonDic);
+            HttpRequestStatus status = [HttpRequest requestResult:jsonDic];
+            if (status == HttpRequestStatusSucc) {
+                
+            }else{
+                errmsg = [jsonDic getStringValueForKey:@"msg" defaultValue:@"请求失败"];
+                [MBProgressHUD showToastWithText:errmsg inView:nil];
+            }
+        }else{
+            [ToolMethods showSysAlert:@"操作失败"];
         }
     }];
 }

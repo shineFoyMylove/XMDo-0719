@@ -48,8 +48,12 @@ typedef NS_ENUM(NSUInteger,HttpRequestStatus) {
 +(void)im_userGetFriendListComplite:(void(^)(BOOL result, NSString *errmsg , NSDictionary *jsonDic))complite;
 
 /**
- * IM - friend 添加好友 */
-+(void)im_userAddFriend:(NSString *)friendPhone complite:(void(^)(BOOL result, NSString *errmsg , NSDictionary *jsonDic))complite;
+ * IM - friend 添加好友
+ * isAgred 是否同意添加好友  
+ 1：申请加为好友
+ 2：同意加为好友
+ */
++(void)im_userAddFriend:(NSString *)friendPhone content:(NSString *)content isAgred:(BOOL)isAgree complite:(void(^)(BOOL result, NSString *errmsg , NSDictionary *jsonDic))complite;
 
 /**
  * IM - friend 解除好友关系 */

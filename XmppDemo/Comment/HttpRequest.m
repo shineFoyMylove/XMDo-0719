@@ -120,10 +120,21 @@ static HttpRequest *instance;
 }
 
 #pragma mark IM 添加好友
-+(void)im_userAddFriend:(NSString *)friendPhone complite:(void(^)(BOOL result, NSString *errmsg , NSDictionary *jsonDic))complite{
++(void)im_userAddFriend:(NSString *)friendPhone content:(NSString *)content isAgred:(BOOL)isAgree complite:(void(^)(BOOL result, NSString *errmsg , NSDictionary *jsonDic))complite{
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setObject:self.user forKey:@"ownerPhone"];
     [params setObject:friendPhone!=nil?friendPhone:@"" forKey:@"friendPhone"];
+    [params setObject:content!=nil?content:@"" forKey:@"content"];
+    NSString *state = @"1";
+    if (isAgree) {
+        state = @"2";  //同意添加好友
+    }
+    [params setObject:state forKey:@"state"];
+    
+    [params setObject:self.userInfo.nickName forKey:@"ownerName"];
+    [params setObject:self.userInfo.headImage forKey:@"ownerUrl"];
+    [params setObject:@"" forKey:@"friendName"];
+    [params setObject:@"" forKey:@"friendUrl"];
     
     NSString *methodUrl = [NSString stringWithFormat:@"%@/friend/addFriend",domain_url];
     [HttpRequest sendPostSession:methodUrl params:params complite:^(BOOL result, NSString *errmsg, NSDictionary *jsonDic) {
